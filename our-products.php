@@ -25,6 +25,11 @@ foreach ($categories as $c) {
 // Optional filters via GET
 $selectedCategoryId = isset($_GET['category']) && ctype_digit((string)$_GET['category']) ? (int)$_GET['category'] : null;
 $searchQuery = trim($_GET['q'] ?? '');
+// Harden search query: cap length and strip control characters
+if ($searchQuery !== '') {
+    $searchQuery = mb_substr($searchQuery, 0, 100);
+    $searchQuery = preg_replace('/[\x00-\x1F\x7F]/u', '', $searchQuery);
+}
 
 // Build products query
 try {
@@ -65,7 +70,7 @@ if (isset($_GET['ajax']) && $_GET['ajax'] === '1') {
               <a href="<?php echo url('product/' . urlencode($p['slug'])); ?>" class="product1_item-link w-inline-block">
                 <div class="margin-bottom margin-xsmall">
                   <div class="product1_image-wrapper">
-                    <img loading="lazy" src="<?php echo $img; ?>" alt="<?php echo htmlspecialchars($p['title']); ?>" class="product1_image">
+                    <img loading="lazy" src="<?php echo htmlspecialchars($img, ENT_QUOTES, 'UTF-8'); ?>" alt="<?php echo htmlspecialchars($p['title']); ?>" class="product1_image">
                   </div>
                 </div>
                 <div class="margin-bottom margin-xxsmall">
@@ -108,7 +113,7 @@ if (isset($_GET['ajax']) && $_GET['ajax'] === '1') {
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
   <link href="css/webflow.css" rel="stylesheet" type="text/css">
   <link href="css/dimathsports-lk.webflow.css" rel="stylesheet" type="text/css">
-  <style>@media (max-width:991px) and (min-width:768px) {html.w-mod-js:not(.w-mod-ix) [data-w-id="d9e6769e-d9c7-8743-5164-d3cd892d9e32"] {-webkit-transform:translate3d(0, 120%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 120%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 120%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 120%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);}}@media (max-width:767px) and (min-width:480px) {html.w-mod-js:not(.w-mod-ix) [data-w-id="d9e6769e-d9c7-8743-5164-d3cd892d9e32"] {-webkit-transform:translate3d(0, 120%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 120%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 120%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 120%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);}}@media (max-width:479px) {html.w-mod-js:not(.w-mod-ix) [data-w-id="d9e6769e-d9c7-8743-5164-d3cd892d9e32"] {-webkit-transform:translate3d(0, 120%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 120%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 120%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 120%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);}}</style>
+  <style>@media (max-width:991px) and (min-width:768px) {html.w-mod-js:not(.w-mod-ix) [data-w-id="d9e6769e-d9c7-8743-5164-d3cd892d9e32"] {-webkit-transform:translate3d(0, 120%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 120%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 120%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 120%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);}}@media (max-width:767px) and (min-width:480px) {html.w-mod-js:not(.w-mod-ix) [data-w-id="d9e6769e-d9c7-8743-5164-d3cd892d9e32"] {-webkit-transform:translate3d(0, 120%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 120%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 120%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 120%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);}}@media (max-width:479px) {html.w-mod-js:not(.w-mod-ix) [data-w-id="d9e6769e-d9c7-8743-5164-d3cd892d9e32"] {-webkit-transform:translate3d(0, 120%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 120%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 120%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);}}</style>
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
@@ -495,7 +500,7 @@ margin: 0rem !important;
                             <div class="margin-bottom margin-xsmall">
                                 <div class="product1_image-wrapper">
                                   <?php $img = !empty($p['main_image']) ? asset($p['main_image']) : asset('images/placeholder-image.svg'); ?>
-                                  <img loading="lazy" src="<?php echo $img; ?>" alt="<?php echo htmlspecialchars($p['title']); ?>" class="product1_image">
+                                  <img loading="lazy" src="<?php echo htmlspecialchars($img, ENT_QUOTES, 'UTF-8'); ?>" alt="<?php echo htmlspecialchars($p['title']); ?>" class="product1_image">
                                 </div>
                               </div>
                               <div class="margin-bottom margin-xxsmall">
@@ -508,7 +513,7 @@ margin: 0rem !important;
                                       if (!empty($catName)): ?>
                                       <div class="product-tag"><?php echo htmlspecialchars($catName); ?></div>
                                     <?php endif; ?>
-                              </div>
+                            </div>
                               </div>
                             </div>
                           </a>
@@ -631,7 +636,7 @@ margin: 0rem !important;
         const cat = fd.get('category');
         const q = fd.get('q');
         if (cat) params.append('category', cat);
-        if (q) params.append('q', q);
+        if (q) params.append('q', q.slice(0,100));
         params.append('ajax','1');
         fetch('our-products.php?' + params.toString(), { headers: { 'X-Requested-With': 'XMLHttpRequest' } })
           .then(r => r.json())
