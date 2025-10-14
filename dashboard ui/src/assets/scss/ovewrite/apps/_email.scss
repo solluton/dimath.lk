@@ -1,0 +1,30 @@
+/*
+<--!----------------------------------------------------------------!-->
+<--! Email App SCSS !-->
+<--!----------------------------------------------------------------!-->
+*/
+.edash-email-list-item {
+    .edash-email-list-meta {
+        .edash-email-list-meta-action {
+            @include transform-hide(100%);
+            transition: $transition-base;
+        }
+    }
+
+    &:hover {
+        .edash-email-list-meta {
+            .edash-email-list-meta-action {
+                @include transform-show(0);
+            }
+        }
+    }
+}
+
+.edash-email-details {
+    @include transform-hide(100%);
+    transition: $transition-base;
+
+    &.edash-email-open {
+        @include transform-show(0);
+    }
+}

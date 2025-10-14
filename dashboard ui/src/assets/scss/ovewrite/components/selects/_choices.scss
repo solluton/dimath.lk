@@ -1,0 +1,80 @@
+/*
+<--!----------------------------------------------------------------!-->
+<--! Choices SCSS !-->
+<--!----------------------------------------------------------------!-->
+*/
+.choices__inner {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 0.5rem;
+    font-size: $font-size-base;
+    border-color: var(--#{$prefix}border-color);
+    background-color: var(--#{$prefix}tertiary-bg);
+}
+
+.is-focused .choices__inner,
+.is-open .choices__inner {
+    border-color: var(--#{$prefix}border-color);
+}
+
+.choices__list--multiple {
+    .choices__item {
+        margin: 0.25rem 0.5rem 0.25rem 0;
+        background-color: var(--#{$prefix}primary);
+        border-color: var(--#{$prefix}primary);
+    }
+}
+
+.choices__input {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 0.5rem;
+    background-color: var(--#{$prefix}tertiary-bg);
+}
+
+.choices[data-type*=select-multiple] .choices__button,
+.choices[data-type*=text] .choices__button {
+    border-left-color: var(--#{$prefix}primary);
+}
+
+.choices__list--dropdown,
+.choices__list[aria-expanded] {
+    z-index: 99;
+    color: var(--#{$prefix}dark);
+    background-color: var(--#{$prefix}tertiary-bg);
+}
+
+.choices__list--dropdown .choices__item--selectable.is-highlighted,
+.choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
+    background-color: var(--#{$prefix}secondary-bg);
+}
+
+.is-open .choices__list--dropdown,
+.is-open .choices__list[aria-expanded] {
+    border-color: var(--#{$prefix}border-color);
+    box-shadow: $dropdown-box-shadow;
+}
+
+.choices__list--dropdown .choices__item,
+.choices__list[aria-expanded] .choices__item {
+    font-size: $font-size-base ;
+}
+
+.choices.is-disabled .choices__inner,
+.choices.is-disabled .choices__input {
+    background-color: var(--#{$prefix}gray-200);
+}
+
+.is-disabled .choices__list--multiple .choices__item {
+    background-color: var(--#{$prefix}gray-400);
+    border-color: var(--#{$prefix}gray-400);
+}
+
+.choices__heading {
+    font-size: $font-size-xs;
+    text-transform: uppercase;
+    color:var(--#{$prefix}gray-500);
+    background-color:var(--#{$prefix}gray-100);
+    border-color: var(--#{$prefix}border-color);
+    border-top: 1px solid var(--#{$prefix}border-color);
+}

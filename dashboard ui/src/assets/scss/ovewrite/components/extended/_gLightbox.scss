@@ -1,0 +1,45 @@
+/*
+<--!----------------------------------------------------------------!-->
+<--! GLightbox SCSS !-->
+<--!----------------------------------------------------------------!-->
+*/
+.glightbox-clean .gslide-title {
+    font-family: inherit;
+    font-size: $font-size-md;
+    font-weight: $font-weight-semibold;
+    color: var(--#{$prefix}dark);
+    margin-bottom: 0.75rem;
+}
+
+.glightbox-clean .gslide-desc {
+    font-size: inherit;
+    font-family: inherit;
+}
+
+.img-thumbnail-overlay {
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    &:before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        border-radius: $border-radius-sm;
+        background: rgb(190 200 210 / 75%);
+    }
+}
+
+.gslide-inline {
+    .ginlined-content {
+        padding: 2rem 2rem;
+    }
+}
+
+.gslide-image {
+    img {
+        border-radius: $border-radius-sm;
+    }
+}

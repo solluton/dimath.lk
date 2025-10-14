@@ -1,0 +1,25 @@
+/*
+<--!----------------------------------------------------------------!-->
+<--! Flotcharts SCSS !-->
+<--!----------------------------------------------------------------!-->
+*/
+.flot-tooltip-dark {
+    color: var(--#{$prefix}dark) !important;
+    font-size: $font-size-sm !important;
+    padding: 0.3125rem 0.5rem !important;
+    border-radius: $border-radius-sm !important;
+    background-color: var(--#{$prefix}tertiary-bg) !important;
+    border-color: var(--#{$prefix}border-color) !important;
+}
+
+.flot-tooltip-dark b {
+    color: $yellow !important;
+}
+
+.legendLayer {
+    fill: var(--#{$prefix}dark) !important;
+
+    .background {
+        fill: var(--#{$prefix}tertiary-bg) !important;
+    }
+}

@@ -1,0 +1,25 @@
+/*
+<--!----------------------------------------------------------------!-->
+<--! TimePicker SCSS !-->
+<--!----------------------------------------------------------------!-->
+*/
+.ui-timepicker-wrapper {
+    padding: 0.75rem 0.5rem 0.75rem 0.75rem;
+    background: var(--#{$prefix}tertiary-bg);
+    border: 1px solid var(--#{$prefix}border-color);
+    box-shadow: $dropdown-box-shadow;
+    border-radius: $border-radius-sm;
+
+    .ui-timepicker-list {
+        li {
+            color: var(--#{$prefix}dark);
+            border-radius: $border-radius-xs;
+
+            &.ui-timepicker-selected,
+            &:hover,
+            .ui-timepicker-selected:hover {
+                background: var(--#{$prefix}secondary-bg);
+            }
+        }
+    }
+}

@@ -1,0 +1,164 @@
+# Upload Directory Security Protection
+# Comprehensive protection against direct access
+
+# Prevent directory browsing
+Options -Indexes
+
+# Deny access to PHP files
+<Files "*.php">
+    Require all denied
+</Files>
+
+<Files "*.phtml">
+    Require all denied
+</Files>
+
+<Files "*.php3">
+    Require all denied
+</Files>
+
+<Files "*.php4">
+    Require all denied
+</Files>
+
+<Files "*.php5">
+    Require all denied
+</Files>
+
+<Files "*.phps">
+    Require all denied
+</Files>
+
+# Deny access to executable files
+<Files "*.exe">
+    Require all denied
+</Files>
+
+<Files "*.bat">
+    Require all denied
+</Files>
+
+<Files "*.cmd">
+    Require all denied
+</Files>
+
+<Files "*.com">
+    Require all denied
+</Files>
+
+<Files "*.scr">
+    Require all denied
+</Files>
+
+# Deny access to script files
+<Files "*.js">
+    Require all denied
+</Files>
+
+<Files "*.vbs">
+    Require all denied
+</Files>
+
+<Files "*.asp">
+    Require all denied
+</Files>
+
+<Files "*.aspx">
+    Require all denied
+</Files>
+
+# Deny access to configuration files
+<Files "*.ini">
+    Require all denied
+</Files>
+
+<Files "*.conf">
+    Require all denied
+</Files>
+
+<Files "*.config">
+    Require all denied
+</Files>
+
+# Deny access to backup files
+<Files "*.bak">
+    Require all denied
+</Files>
+
+<Files "*.backup">
+    Require all denied
+</Files>
+
+# Deny access to log files
+<Files "*.log">
+    Require all denied
+</Files>
+
+# Deny access to temporary files
+<Files "*.tmp">
+    Require all denied
+</Files>
+
+<Files "*.temp">
+    Require all denied
+</Files>
+
+# Prevent access to hidden files
+<Files ".*">
+    Require all denied
+</Files>
+
+# Deny access to .htaccess files
+<Files ".htaccess">
+    Require all denied
+</Files>
+
+# Deny access to README and documentation files
+<Files "README*">
+    Require all denied
+</Files>
+
+<Files "*.txt">
+    Require all denied
+</Files>
+
+<Files "*.md">
+    Require all denied
+</Files>
+
+# Allow only specific image file types
+<FilesMatch "\.(jpg|jpeg|png|gif|webp|avif)$">
+    Require all granted
+</FilesMatch>
+
+# Set proper MIME types for images
+<IfModule mod_mime.c>
+    AddType image/jpeg .jpg .jpeg
+    AddType image/png .png
+    AddType image/gif .gif
+    AddType image/webp .webp
+    AddType image/avif .avif
+</IfModule>
+
+# Set cache headers for images
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/avif "access plus 1 year"
+</IfModule>
+
+# Set security headers
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options nosniff
+    Header always set X-Frame-Options DENY
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set X-Robots-Tag "noindex, nofollow"
+</IfModule>
+
+# Custom error pages
+ErrorDocument 403 /access-denied.php
+ErrorDocument 404 /404.php

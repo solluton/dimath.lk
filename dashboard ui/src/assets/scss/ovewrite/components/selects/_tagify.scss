@@ -1,0 +1,106 @@
+/*
+<--!----------------------------------------------------------------!-->
+<--! Tagify SCSS !-->
+<--!----------------------------------------------------------------!-->
+*/
+:root {
+    --tagify-dd-color-primary: var(--#{$prefix}primary);
+    --tagify-dd-bg-color: var(--#{$prefix}tertiary-bg);
+}
+
+.tagify {
+    --tag-inset-shadow-size: 1.5em;
+    --tag-bg: var(--#{$prefix}gray-200);
+    --tag-text-color: var(--#{$prefix}dark);
+    --tag-remove-btn-color: var(--#{$prefix}dark);
+    --tags-border-color: var(--#{$prefix}border-color);
+    --tag-hover: var(--#{$prefix}gray-200);
+
+}
+
+.tagify__tag {
+    cursor: pointer;
+}
+
+.tagify:not(.form-control-sm):not(.form-control-lg) {
+    padding: 0 0.25rem;
+    min-height: 2.375rem;
+    border-radius: $border-radius-sm;
+    display: inline-flex;
+    align-items: center;
+}
+
+.tagify__tag:focus div::before,
+.tagify__tag:hover:not([readonly]) div::before {
+    --tag-bg-inset: 0;
+}
+
+.tagify__tag__removeBtn {
+    font-family: $font-family-base;
+}
+
+.tagify__dropdown {
+    box-shadow: $dropdown-box-shadow;
+
+    .tagify__dropdown__wrapper {
+        border-color: var(--#{$prefix}border-color);
+    }
+}
+
+.tags-look {
+    .tagify__dropdown__item {
+        display: inline-block;
+        margin: .2em;
+    }
+}
+
+.advance-tagify {
+    .tagify__tag>div>* {
+        color: $white;
+    }
+
+    .tagify__tag__removeBtn {
+        color: $white;
+    }
+
+    .tagify__tag:hover {
+        >div>* {
+            color: var(--#{$prefix}dark);
+        }
+
+        .tagify__tag__removeBtn {
+            color: var(--#{$prefix}dark);
+        }
+    }
+}
+
+.customLook {
+    display: inline-block;
+    min-width: 0;
+    border: none;
+
+    .tagify__tag {
+        margin-top: 0;
+    }
+
+    .tagify__tag:only-of-type .tagify__tag__removeBtn {
+        display: none;
+    }
+
+    .tagify__tag__removeBtn {
+        opacity: 0;
+        transform: translateX(-6px) scale(.5);
+        margin-left: -3ch;
+        transition: .12s;
+    }
+
+    .tagify__tag:hover .tagify__tag__removeBtn {
+        transform: none;
+        opacity: 1;
+        margin-left: -1ch;
+    }
+
+    .tagify__input {
+        display: none;
+    }
+}

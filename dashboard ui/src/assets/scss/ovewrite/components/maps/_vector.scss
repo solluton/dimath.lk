@@ -1,0 +1,35 @@
+/*
+<--!----------------------------------------------------------------!-->
+<--! Vector SCSS !-->
+<--!----------------------------------------------------------------!-->
+*/
+.jvm-tooltip {
+    font-family: $font-family-base;
+    font-weight: $font-weight-semibold;
+    background-color: var(--#{$prefix}primary);
+}
+
+.jvm-zoom-btn {
+    padding: 3.5px;
+    line-height: 7px;
+    background-color: var(--#{$prefix}primary);
+}
+
+image,
+text,
+.jvm-zoomin,
+.jvm-zoomout {
+    font-size: $font-size-sm;
+    font-family: $font-family-base;
+}
+
+.jvm-series-container {
+    .jvm-legend {
+        background: var(--#{$prefix}tertiary-bg);
+        border-color: var(--#{$prefix}border-color);
+
+        .jvm-legend-title {
+            border-color: var(--#{$prefix}border-color);
+        }
+    }
+}

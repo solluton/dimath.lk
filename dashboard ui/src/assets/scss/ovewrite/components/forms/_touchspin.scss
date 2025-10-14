@@ -1,0 +1,79 @@
+/*
+<--!----------------------------------------------------------------!-->
+<--! TouchSpin SCSS !-->
+<--!----------------------------------------------------------------!-->
+*/
+
+.bootstrap-touchspin {
+	.input-group-btn {
+		.btn-light {
+			border: 1px solid var(--#{$prefix}border-color);
+		}
+	}
+}
+
+.input-group-prepend {
+
+	[type="button"],
+	.input-group-text {
+		padding: 0.625rem 0.9375rem;
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+}
+
+.input-group-append {
+
+	[type="button"],
+	.input-group-text {
+		padding: 0.625rem 0.9375rem;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+}
+
+.input-group-sm {
+	.input-group-prepend {
+
+		[type="button"],
+		.input-group-text {
+			padding: 0.25rem 0.5rem;
+		}
+	}
+
+	.input-group-append {
+
+		[type="button"],
+		.input-group-text {
+			padding: 0.25rem 0.5rem;
+		}
+	}
+
+	.input-sm {
+		padding: 0.25rem 0.5rem;
+	}
+}
+
+.input-group-lg {
+	.input-group-prepend {
+
+		[type="button"],
+		.input-group-text {
+			padding: 0.9375rem 20px;
+		}
+	}
+
+	.input-group-append {
+
+		[type="button"],
+		.input-group-text {
+			padding: 0.9375rem 20px;
+		}
+	}
+}
+
+.bootstrap-touchspin {
+	.input-group-btn-vertical {
+		left: 1px;
+	}
+}

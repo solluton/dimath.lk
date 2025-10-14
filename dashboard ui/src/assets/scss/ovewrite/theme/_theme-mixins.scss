@@ -1,0 +1,16 @@
+/*
+<--!----------------------------------------------------------------!-->
+<--! Theme Mixin SCSS !-->
+<--!----------------------------------------------------------------!-->
+*/
+@mixin transform-hide($value) {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX($value);
+}
+
+@mixin transform-show($value) {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX($value);
+}

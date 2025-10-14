@@ -1,0 +1,39 @@
+/*
+<--!----------------------------------------------------------------!-->
+<--! Dashbaord SCSS !-->
+<--!----------------------------------------------------------------!-->
+*/
+
+#sales-revenue-chart .apexcharts-series {
+    &[seriesName=TotalxSales] path {
+        clip-path: inset(0% 0% -4px 0% round 4px);
+    }
+
+    &[seriesName=TotalxRevenue] {
+        transform: scaleY(1.05);
+    }
+}
+
+.performance-progress {
+    &::part(base) {
+        width: 7rem;
+        height: 7rem;
+    }
+
+    &::part(value) {
+        stroke-width: 0.375rem;
+        stroke: $primary;
+        stroke-linecap: round;
+    }
+
+    &::part(circle) {
+        stroke-width: 0.3125rem;
+        stroke: var(--#{$prefix}expo-hover-bg);
+    }
+
+    &::part(text) {
+        font-family: $font-family-base;
+        font-weight: bold;
+        fill: $primary;
+    }
+}

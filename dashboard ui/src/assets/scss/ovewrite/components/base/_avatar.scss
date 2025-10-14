@@ -1,0 +1,171 @@
+/*
+<--!----------------------------------------------------------------!-->
+<--! Avatars SCSS !-->
+<--!----------------------------------------------------------------!-->
+*/
+
+// Sass Mixin
+@mixin avatar($size) {
+	width: map-get($avatar-sizes, $size);
+	height: map-get($avatar-sizes, $size);
+	font-size: map-get($avatar-font-sizes, $size);
+	border-radius: $border-radius-pill;
+}
+
+// Avatar Sizes
+$avatar-sizes: (
+	"xs": 1.25rem,
+	"sm": 1.75rem,
+	"md": 2.5rem,
+	"lg": 3rem,
+	"xl": 3.5rem,
+	"xxl": 4.25rem,
+);
+
+// Avatar Font Sizes
+$avatar-font-sizes: (
+	"xs": 0.75rem,
+	"sm": 0.875rem,
+	"md": 1rem,
+	"lg": 1.25rem,
+	"xl": 1.75rem,
+	"xxl": 2rem,
+);
+
+// Avatar Styles
+.avatar {
+
+	@each $size,
+	$value in $avatar-sizes {
+		&.avatar-#{$size} {
+			@include avatar($size);
+
+			.fi {
+				font-size: map-get($avatar-font-sizes, $size); // Adjust font size based on sizing
+			}
+		}
+	}
+
+	cursor: pointer;
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: $border-radius-pill;
+	transition: $transition-base;
+
+	img {
+		height: auto;
+		max-width: 100%;
+		border-radius: $border-radius-pill;
+	}
+
+	.avatar-text {
+		padding: 0.4rem;
+	}
+
+	.avatar-indicator {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		width: 0.65rem;
+		height: 0.65rem;
+		border-radius: 50%;
+		border: 2px solid var(--#{$prefix}tertiary-bg); // Add a white border
+
+		&.active {
+			background-color: $success; // Replace with the appropriate success color variable
+		}
+
+		&.busy {
+			background-color: $warning; // Replace with the appropriate warning color variable
+		}
+
+		&.inactive {
+			background-color: $danger; // Replace with the appropriate gray color variable
+		}
+
+		&.offline {
+			background-color: $gray-500; // Replace with the appropriate gray color variable
+		}
+	}
+}
+
+// Avatar Group
+.avatar-group {
+	display: flex;
+	justify-content: flex-start;
+
+	// Avatar Group Hover Effect
+	.avatar:hover {
+		z-index: 1;
+		transform: scale(1.1); // Increase the scale on hover
+		transition: transform 0.2s ease-in-out; // Add a smooth transition effect
+	}
+
+	&.avatar-group-xs {
+		.avatar {
+			margin-right: -0.5rem;
+			border: 0.2rem solid var(--#{$prefix}tertiary-bg); // Add a white border
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+	&.avatar-group-sm {
+		.avatar {
+			margin-right: -0.5rem;
+			border: 0.2rem solid var(--#{$prefix}tertiary-bg); // Add a white border
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+	&.avatar-group-md {
+		.avatar {
+			margin-right: -0.75rem;
+			border: 0.2rem solid var(--#{$prefix}tertiary-bg); // Add a white border
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+	&.avatar-group-lg {
+		.avatar {
+			margin-right: -1rem;
+			border: 0.2rem solid var(--#{$prefix}tertiary-bg); // Add a white border
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+	&.avatar-group-xl {
+		.avatar {
+			margin-right: -1.5rem;
+			border: 0.2rem solid var(--#{$prefix}tertiary-bg); // Add a white border
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+	&.avatar-group-xxl {
+		.avatar {
+			margin-right: -2rem;
+			border: 0.2rem solid var(--#{$prefix}tertiary-bg); // Add a white border
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}

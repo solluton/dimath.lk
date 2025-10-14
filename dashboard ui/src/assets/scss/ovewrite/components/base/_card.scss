@@ -1,0 +1,163 @@
+/*
+<--!----------------------------------------------------------------!-->
+<--! Card SCSS  !-->
+<--!----------------------------------------------------------------!-->
+*/
+
+// Iterate over theme colors
+@each $variant, $color in $theme-colors {
+  $lighter-border-color: lighten($color, 5%);
+
+  .text-bg-#{$variant} {
+    .card-header,
+    .card-title,
+    .card-body,
+    .card-footer {
+      color: $white;
+      border-color: $lighter-border-color;
+    }
+  }
+
+  .text-bg-light {
+    &.text-bg-#{$variant} {
+      background-color: $lighter-border-color;
+
+      // Apply styles to card components in light variant
+      .card-header,
+      .card-title,
+      .card-body,
+      .card-footer {
+        color: $dark;
+        border-color: $lighter-border-color;
+      }
+    }
+  }
+}
+
+// Map of card components and their classes
+$card-components: (
+  ".card": "card",
+  ".card-header": "card-header",
+  ".card-title": "card-title",
+  ".card-body": "card-body",
+  ".card-footer": "card-footer",
+);
+
+// Mixin for making cards flush (without borders)
+@mixin card-flush {
+  border: none !important;
+}
+
+// Mixin for card hover animation
+@mixin card-hover-animation {
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: translate3d(0, -0.3125rem, 0);
+    /* Replace the pixel value with rem value */
+  }
+}
+
+// Apply mixins to card components
+@each $selector, $class in $card-components {
+  #{$selector} {
+    &.card-flush {
+      @include card-flush;
+    }
+
+    .card-flush & {
+      @include card-flush;
+    }
+
+    &.card-hover {
+      @include card-hover-animation;
+    }
+  }
+}
+
+// Map of card heights and their corresponding values in rem
+$height-values: (
+  100: calc(100% - #{$grid-gutter-width}),
+  75: calc(75% - #{$grid-gutter-width}),
+  50: calc(50% - #{$grid-gutter-width}),
+  33: calc(33.33% - #{$grid-gutter-width}),
+  25: calc(25% - #{$grid-gutter-width}),
+);
+
+// Mixin for setting card stretch heights
+@mixin card-stretch-heights {
+  @each $height, $value in $height-values {
+    .card-stretch-#{$height} {
+      height: $value;
+    }
+  }
+}
+
+@include card-stretch-heights;
+
+// apply styles Cards
+.card {
+  .card-header {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      &.card-title {
+        font-size: $font-size-lg;
+      }
+    }
+  }
+
+  // Apply styles for card expand
+  &.card-expand {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999;
+    position: fixed !important;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    border-radius: 0;
+    height: calc(100% - 0rem);
+    transition: all 0.3s ease;
+
+    &.card-loading {
+      position: absolute;
+    }
+
+    &.card-expand .card-body {
+      flex: 1 0 0;
+    }
+  }
+
+  // Apply styles for card loader
+  .card-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1030;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $border-radius-md;
+    background: rgb(210 210 225 / 75%);
+  }
+
+  .spinner-border {
+    --bs-spinner-width: 1rem;
+    --bs-spinner-height: 1rem;
+    --bs-spinner-border-width: 1px;
+  }
+
+  // Apply box shadow based on theme colors
+  @each $color, $value in $theme-colors {
+    &.bg-#{$color} {
+      box-shadow: 0 10px 10px -1px transparentize($value, 0.7);
+    }
+  }
+}

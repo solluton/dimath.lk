@@ -1,0 +1,105 @@
+// Import Bootstrap core
+@import "./../../../node_modules/bootstrap/scss/functions";
+@import "./../../../node_modules/bootstrap/scss/variables";
+@import "./../../../node_modules/bootstrap/scss/variables-dark";
+@import "./../../../node_modules/bootstrap/scss/maps";
+@import "./../../../node_modules/bootstrap/scss/mixins";
+@import "./../../../node_modules/bootstrap/scss/utilities";
+
+// Custom Utilities
+$new-utilities: (
+  // Width and Height Utilities
+  "wd": (
+    property: width,
+    class: wd,
+    responsive: true,
+    values: $sizings,
+  ),
+  "ht": (
+    property: height,
+    class: ht,
+    responsive: true,
+    values: $sizings,
+  ),
+  "min-wd": (
+    property: min-width,
+    class: min-wd,
+    responsive: true,
+    values: $sizings,
+  ),
+  "min-ht": (
+    property: min-height,
+    class: min-ht,
+    responsive: true,
+    values: $sizings,
+  ),
+  "max-wd": (
+    property: max-width,
+    class: max-wd,
+    responsive: true,
+    values: $sizings,
+  ),
+  "max-ht": (
+    property: max-height,
+    class: max-ht,
+    responsive: true,
+    values: $sizings,
+  ),
+
+  // Border Style Utilities
+  "border-style": (
+    property: border-style,
+    class: border,
+    values: $border-styles,
+  ),
+  "border-top-style": (
+    property: border-top-style,
+    class: border-top,
+    values: $border-styles,
+  ),
+  "border-left-style": (
+    property: border-left-style,
+    class: border-left,
+    values: $border-styles,
+  ),
+  "border-right-style": (
+    property: border-right-style,
+    class: border-right,
+    values: $border-styles,
+  ),
+  "border-bottom-style": (
+    property: border-bottom-style,
+    class: border-bottom,
+    values: $border-styles,
+  ),
+
+  // Cursor Utilities
+  "cursor": (
+    property: cursor,
+    values: auto default pointer wait text move help not-allowed,
+  ),
+
+  // Opacity Utilities
+  "opacity": (
+    property: opacity,
+    class: opacity,
+    values: $opacities,
+  ),
+  "bg-opacity": (
+    property: opacity,
+    css-var: true,
+    class: bg-opacity,
+    values: $opacities,
+  ),
+  "border-opacity": (
+    css-var: true,
+    class: border-opacity,
+    values: $opacities,
+  ),
+);
+
+// Merge Custom Utilities into Bootstrap Utilities
+$utilities: map-merge($utilities, $new-utilities);
+
+// Import Bootstrap Utilities API
+@import "./../../../node_modules/bootstrap/scss/utilities/api";

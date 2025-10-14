@@ -1,0 +1,71 @@
+# Environment Variables
+.env
+.env.local
+.env.production
+.env.staging
+
+# Database Files
+*.sql
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+logs/
+error.log
+access.log
+
+# Cache
+cache/
+tmp/
+temp/
+
+# Uploads (if you want to exclude uploaded files)
+# uploads/
+
+# IDE Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node Modules (if using npm/yarn)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Composer (if using PHP Composer)
+vendor/
+composer.lock
+
+# Backup Files
+*.bak
+*.backup
+*.old
+
+# Temporary Files
+*.tmp
+*.temp
+
+# Configuration Files with Sensitive Data
+config/local.php
+config/production.php
+
+# Error Pages (if you want to exclude them)
+# 401.php
+# 404.php
+
+# Development Files
+test.php
+debug.php
+setup*.php
+create*.php
+remove*.php

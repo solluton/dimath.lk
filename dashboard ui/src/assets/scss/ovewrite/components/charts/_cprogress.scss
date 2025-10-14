@@ -1,0 +1,296 @@
+/*
+<--!----------------------------------------------------------------!-->
+<--! Circle Progress SCSS !-->
+<--!----------------------------------------------------------------!-->
+*/
+
+/* basic-progress */
+.basic-progress {
+    &::part(base) {
+        width: 15rem;
+        height: 15rem;
+    }
+
+    &::part(value) {
+        stroke-width: 0.375rem;
+        stroke: $primary;
+    }
+
+    &::part(circle) {
+        stroke-width: 0.375rem;
+        stroke: rgba($dark, 7%);
+    }
+
+    &::part(text) {
+        font-weight: bold;
+        fill: $primary;
+    }
+}
+
+/* dasharray-progress */
+.dasharray-progress {
+    &::part(base) {
+        width: 15rem;
+        height: 15rem;
+    }
+
+    &::part(value) {
+        stroke-width: 0.375rem;
+        stroke: $primary;
+        stroke-dasharray: 4 1;
+    }
+
+    &::part(circle) {
+        stroke-width: 0.375rem;
+        stroke: rgba($dark, 7%);
+    }
+
+    &::part(text) {
+        font-weight: bold;
+        fill: $primary;
+    }
+}
+
+/* linecap-progress */
+.linecap-progress {
+    &::part(base) {
+        width: 15rem;
+        height: 15rem;
+    }
+
+    &::part(value) {
+        stroke-width: 0.375rem;
+        stroke: $primary;
+        stroke-linecap: round;
+    }
+
+    &::part(circle) {
+        stroke-width: 0.125rem;
+        stroke: rgba($dark, 7%);
+    }
+}
+
+/* filled-progress */
+.filled-progress {
+    &::part(base) {
+        width: 15rem;
+        height: 15rem;
+    }
+
+    &::part(value) {
+        stroke-width: 50px;
+        stroke: $primary;
+    }
+
+    &::part(circle) {
+        stroke-width: 50px;
+        stroke: rgba($dark, 7%);
+    }
+
+    &::part(text) {
+        font-weight: bold;
+        fill: $white;
+    }
+}
+
+/* lineround-progress */
+.lineround-progress {
+    &::part(base) {
+        width: 15rem;
+        height: 15rem;
+    }
+
+    &::part(value) {
+        stroke-width: 0.375rem;
+        stroke: $white;
+        stroke-linecap: round;
+    }
+
+    &::part(circle) {
+        stroke-width: 0.5rem;
+        stroke: $primary;
+    }
+
+    &::part(text) {
+        font-weight: bold;
+        fill: $primary;
+    }
+}
+
+/* valueoncircle-progress */
+.valueoncircle-progress {
+    &::part(base) {
+        width: 15rem;
+        height: 15rem;
+    }
+
+    &::part(value) {
+        stroke: $white;
+        stroke-width: 0.75rem;
+        stroke: $primary;
+    }
+
+    &::part(circle) {
+        stroke: $white;
+        stroke-width: 1.5rem;
+        fill: rgba($dark, 7%);
+    }
+
+    &::part(text) {
+        font-weight: bold;
+        font-size: 1rem;
+    }
+
+}
+
+/* circlegap-progress */
+.circlegap-progress {
+    &::part(base) {
+        width: 15rem;
+        height: 15rem;
+    }
+
+    &::part(value) {
+        stroke-width: 0.75rem;
+        stroke: $primary;
+    }
+
+    &::part(circle) {
+        stroke: $white;
+        stroke-width: 1.5rem;
+        fill: $primary;
+    }
+
+    &::part(text) {
+        font-weight: bold;
+        font-size: 1rem;
+        fill: $white;
+    }
+}
+
+/* circlesize-progress */
+.circlesize-progress {
+    &::part(base) {
+        width: 15rem;
+        height: 15rem;
+    }
+
+    &::part(value) {
+        stroke-width: 0.125rem;
+        stroke: $primary;
+    }
+
+    &::part(circle) {
+        stroke: rgba($dark, 7%);
+        stroke-width: 0.125rem;
+    }
+
+    &::part(text) {
+        font-weight: bold;
+        font-size: 1rem;
+        fill: $primary;
+    }
+}
+
+/* dashoffset-progress */
+.dashoffset-progress {
+    &::part(base) {
+        width: 15rem;
+        height: 15rem;
+    }
+
+    &::part(value) {
+        stroke-width: 0.375rem;
+        stroke: $primary;
+        stroke-dasharray: 0.6 3;
+    }
+
+    &::part(circle) {
+        stroke-width: 0.375rem;
+        stroke: rgba($dark, 7%);
+        stroke-dasharray: 0.6 3;
+        stroke-dashoffset: 1.6;
+    }
+
+    &::part(text) {
+        font-weight: bold;
+        fill: $primary;
+        font-size: 1rem;
+    }
+}
+
+/* filledcircle-progress */
+.filledcircle-progress {
+    &::part(base) {
+        width: 15rem;
+        height: 15rem;
+    }
+
+    &::part(value) {
+        stroke-width: 0.75rem;
+        stroke: $primary;
+    }
+
+    &::part(circle) {
+        stroke: $white;
+        stroke-width: 0.75rem;
+        fill: rgba($dark, 7%);
+    }
+
+    &::part(text) {
+        font-weight: bold;
+        font-size: 1rem;
+        fill: $primary;
+    }
+}
+
+/* multiplecircle-progress */
+.multiplecircle-progress {
+    &::part(base) {
+        width: 15rem;
+        height: 15rem;
+    }
+
+    &::part(value) {
+        stroke-width: 1.5rem;
+        stroke: $primary;
+        stroke-dasharray: 58 1;
+    }
+
+    &::part(circle) {
+        stroke: rgba($dark, 7%);
+        stroke-width: 1.5rem;
+        fill: rgba($dark, 7%);
+    }
+
+    &::part(text) {
+        font-weight: bold;
+        font-size: 1rem;
+        fill: $primary;
+    }
+}
+
+/* dotprogress-progress */
+.dotprogress-progress {
+    &::part(base) {
+        width: 15rem;
+        height: 15rem;
+    }
+
+    &::part(value) {
+        stroke-width: 0.75rem;
+        stroke: $primary;
+        stroke-dasharray: 0 23.3;
+        stroke-linecap: round;
+    }
+
+    &::part(circle) {
+        stroke-width: 0.375rem;
+        stroke: rgba($dark, 7%);
+    }
+
+    &::part(text) {
+        font-weight: bold;
+        fill: $primary;
+    }
+}

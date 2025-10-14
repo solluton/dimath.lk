@@ -1,0 +1,42 @@
+/*
+<--!----------------------------------------------------------------!-->
+<--! Bootstrap Table SCSS !-->
+<--!----------------------------------------------------------------!-->
+*/
+.bootstrap-table {
+    .fixed-table-toolbar {
+
+        .bs-bars,
+        .columns,
+        .search {
+            position: relative;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    .fixed-table-container {
+        &.fixed-height {
+            .table {
+                thead {
+                    th {
+                        border-bottom: inherit;
+                    }
+                }
+            }
+        }
+    }
+
+    .fixed-table-body {
+        .fixed-table-loading {
+            .loading-wrap {
+
+                .animation-dot,
+                .animation-wrap::after,
+                .animation-wrap::before {
+                    padding: 0;
+                }
+            }
+        }
+    }
+}

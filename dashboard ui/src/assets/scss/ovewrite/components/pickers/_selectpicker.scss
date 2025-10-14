@@ -1,0 +1,39 @@
+/*
+<--!----------------------------------------------------------------!-->
+<--! SelectPicker SCSS !-->
+<--!----------------------------------------------------------------!-->
+*/
+.bootstrap-select {
+
+    .dropdown-toggle:focus,
+    >select.mobile-device:focus+.dropdown-toggle {
+        outline: none !important;
+        outline-offset: 0;
+    }
+
+    &.show-tick {
+        .dropdown-menu .selected span.check-mark {
+            top: 0.75rem;
+        }
+    }
+
+    .bs-ok-default:after {
+        width: 0.35em;
+        height: 0.75em;
+        color: var(--#{$prefix}dark);
+        border-width: 0 0.01em 0.01em 0;
+    }
+
+    .btn-light {
+        border: 1px solid var(--#{$prefix}border-color);
+    }
+
+    .dropdown-header {
+        .text {
+            font-size: $font-size-xs;
+            font-weight: $font-weight-semibold;
+            text-transform: uppercase;
+            color: var(--#{$prefix}secondary);
+        }
+    }
+}

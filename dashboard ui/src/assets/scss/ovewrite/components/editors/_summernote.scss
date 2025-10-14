@@ -1,0 +1,58 @@
+/*
+<--!----------------------------------------------------------------!-->
+<--! Summernote SCSS !-->
+<--!----------------------------------------------------------------!-->
+*/
+.note-frame {
+    color: var(--#{$prefix}body-color);
+    font-family: $font-family-base;
+}
+
+.note-editor.note-airframe,
+.note-editor.note-frame,
+.note-btn.note-btn,
+.note-modal-header {
+    border-color: var(--#{$prefix}border-color);
+}
+
+.note-btn>span.note-icon-caret:nth-child(2) {
+    display: none;
+}
+
+.note-btn,
+.note-toolbar,
+.note-dropdown-menu,
+.note-modal-content {
+    color: var(--#{$prefix}dark);
+    background-color: var(--#{$prefix}tertiary-bg);
+    border-color: var(--#{$prefix}border-color);
+}
+
+a.note-dropdown-item,
+a.note-dropdown-item:hover {
+    color: var(--#{$prefix}dark);
+}
+
+a.note-dropdown-item:hover {
+    background-color: var(--#{$prefix}secondary-bg);
+}
+
+.note-btn.active,
+.note-btn.focus,
+.note-btn:active,
+.note-btn:focus,
+.note-btn:hover {
+    background-color: var(--#{$prefix}secondary-bg);
+    border-color: var(--#{$prefix}border-color);
+    color: var(--#{$prefix}dark);
+}
+
+.note-popover {
+    background-color: var(--#{$prefix}tertiary-bg);
+    border-color: var(--#{$prefix}border-color);
+}
+
+.note-modal-title,
+.note-form-label {
+    color: var(--#{$prefix}dark);
+}

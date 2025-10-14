@@ -1,0 +1,122 @@
+/*
+<--!----------------------------------------------------------------!-->
+<--! DatePicker SCSS !-->
+<--!----------------------------------------------------------------!-->
+*/
+.datepicker {
+    padding: 0.875rem 0.875rem;
+
+    .datepicker-switch:hover,
+    .next:hover,
+    .prev:hover,
+    tfoot tr th:hover {
+        background: var(--#{$prefix}gray-200);
+    }
+
+    table {
+        thead {
+
+            tr,
+            td {
+                color: var(--#{$prefix}dark);
+            }
+        }
+
+        tr {
+
+            td,
+            th {
+                width: 2.125rem;
+                height: 2.125rem;
+                text-align: center;
+                border: none;
+
+                &.dow {
+                    text-transform: uppercase;
+                    font-weight: $font-weight-bold;
+                    font-size: $font-size-xs;
+                }
+            }
+
+            td {
+
+                &.active,
+                &.active.highlighted,
+                &.active,
+                &.range-start,
+                &.range-end,
+                span.active,
+                span.active.disabled,
+                &.selected,
+                &.selected.disabled,
+                &.selected.disabled:hover,
+                &.selected:hover {
+                    color: $white !important;
+                    background-color: $primary !important;
+                }
+
+                &.new,
+                &.old,
+                &.disabled {
+                    color: var(--#{$prefix}gray-400);
+                }
+
+                &.range,
+                &.range.disabled,
+                &.range.disabled:hover,
+                &.range:hover {
+                    background: var(--#{$prefix}gray-200);
+                }
+
+                &.today,
+                &.today.disabled,
+                &.today.disabled:hover,
+                &.today:hover {
+                    background: var(--#{$prefix}gray-200);
+                    background-image: none;
+                }
+
+                &.today.active,
+                &.today.disabled,
+                &.today.disabled.active,
+                &.today.disabled.disabled,
+                &.today.disabled:active,
+                &.today.disabled:hover,
+                &.today.disabled:hover.active,
+                &.today.disabled:hover.disabled,
+                &.today.disabled:hover:active,
+                &.today.disabled:hover:hover,
+                &.today.disabled:hover[disabled],
+                &.today.disabled[disabled],
+                &.today:active,
+                &.today:hover,
+                &.today:hover.active,
+                &.today:hover.disabled,
+                &.today:hover:active,
+                &.today:hover:hover,
+                &.today:hover[disabled],
+                &.today[disabled] {
+                    background: var(--#{$prefix}gray-200);
+                }
+            }
+        }
+    }
+
+    &.datepicker-dropdown {
+        &:before {
+            border-bottom-color: var(--#{$prefix}border-color);
+        }
+
+        &:after {
+            border-bottom-color: var(--#{$prefix}tertiary-bg);
+        }
+
+        &.datepicker-orient-top:before {
+            border-top-color: var(--#{$prefix}border-color);
+        }
+
+        &.datepicker-orient-top:after {
+            border-top-color: var(--#{$prefix}tertiary-bg);
+        }
+    }
+}

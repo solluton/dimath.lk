@@ -1,0 +1,83 @@
+/*
+<--!----------------------------------------------------------------!-->
+<--! Quill Editor SCSS !-->
+<--!----------------------------------------------------------------!-->
+*/
+.ql-snow {
+    .ql-picker {
+        color: var(--#{$prefix}dark)
+    }
+
+    .ql-picker-options {
+        background-color: var(--#{$prefix}tertiary-bg);
+    }
+
+    &.ql-toolbar {
+        font-family: inherit;
+        border-color: var(--#{$prefix}border-color);
+
+
+        .ql-picker .ql-stroke,
+        button .ql-stroke {
+            stroke: var(--#{$prefix}dark)
+        }
+
+        .ql-fill,
+        .ql-stroke.ql-fill {
+            fill: var(--#{$prefix}dark)
+        }
+
+        .ql-picker.ql-expanded {
+            .ql-picker-label {
+                color: var(--#{$prefix}dark);
+                border-color: var(--#{$prefix}border-color);
+                border-radius: $border-radius-sm;
+            }
+
+            .ql-picker-options {
+                border-color: var(--#{$prefix}border-color);
+                border-radius: 0 0 0.3rem 0.3rem;
+                box-shadow: $box-shadow-sm;
+            }
+        }
+
+
+        .ql-picker.ql-active .ql-fill,
+        .ql-picker.ql-active .ql-stroke,
+        .ql-picker.ql-expanded .ql-fill,
+        .ql-picker.ql-expanded .ql-stroke,
+        .ql-picker:focus .ql-fill,
+        .ql-picker:focus .ql-stroke,
+        .ql-picker:hover .ql-fill,
+        .ql-picker:hover .ql-stroke,
+        button.ql-active .ql-fill,
+        button.ql-active .ql-stroke,
+        button.ql-expanded .ql-fill,
+        button.ql-expanded .ql-stroke,
+        button:focus .ql-fill,
+        button:focus .ql-stroke,
+        button:hover .ql-fill,
+        button:hover .ql-stroke {
+            stroke: var(--#{$prefix}primary)
+        }
+
+        .ql-picker.ql-active .ql-fill,
+        .ql-picker.ql-expanded .ql-fill,
+        .ql-picker:focus .ql-fill,
+        .ql-picker:hover .ql-fill,
+        button.ql-active .ql-fill,
+        button.ql-expanded .ql-fill,
+        button:focus .ql-fill,
+        button:hover .ql-fill {
+            fill: var(--#{$prefix}primary)
+        }
+    }
+
+    &.ql-container {
+        border-color: var(--#{$prefix}border-color);
+    }
+
+    .ql-editor.ql-blank:before {
+        color: var(--#{$prefix}dark);
+    }
+}

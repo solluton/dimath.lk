@@ -1,0 +1,19 @@
+/*
+<--!----------------------------------------------------------------!-->
+<--! Kanban App SCSS !-->
+<--!----------------------------------------------------------------!-->
+*/
+.card-item {
+    .dropdown {
+        opacity: 0;
+        visibility: hidden;
+        transition: $transition-base;
+    }
+
+    &:hover {
+        .dropdown {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+/*
+<--!----------------------------------------------------------------!-->
+<--! Default Table SCSS !-->
+<--!----------------------------------------------------------------!-->
+*/
+
+table {
+    white-space: nowrap;
+  }
+
+  
+.table {
+    &.table-gap-hover tbody tr {
+        cursor: pointer;
+        transition: $transition-base;
+    }
+
+    &.table-gap-hover tbody tr:hover {
+        transform: scale(1.0025);
+        box-shadow: $box-shadow-sm;
+    }
+}

@@ -1,0 +1,43 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://dmt.lk/sitemap.xml
+
+# Disallow admin and system areas
+Disallow: /admin/
+Disallow: /config/
+Disallow: /uploads/
+Disallow: /phpmailer/
+Disallow: /database/
+Disallow: /documents/
+Disallow: /includes/
+
+# Disallow handler and process files
+Disallow: /contact-handler
+Disallow: /process_email_queue
+Disallow: /forgot-password
+Disallow: /admin-password-reset
+Disallow: /login
+Disallow: /logout
+Disallow: /router
+Disallow: /generate-sitemap
+
+# Disallow error pages
+Disallow: /401
+Disallow: /404
+Disallow: /access-denied
+
+# Disallow old pharmaceutical pages (now deleted but block just in case)
+Disallow: /services
+Disallow: /partnership
+Disallow: /quality-assurance
+Disallow: /service/
+Disallow: /blog
+Disallow: /blog/
+
+# Allow important directories
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /fonts/

@@ -1,0 +1,33 @@
+RewriteEngine On
+
+# Prevent access to backup directory
+RewriteRule ^old-website-backup/ - [F,L]
+
+# Handle static assets (CSS, JS, images, etc.)
+RewriteRule ^(css|js|images|fonts|uploads|documents|phpmailer|config)/ - [L]
+
+# Handle admin password reset URL
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^admin-password-reset/?$ admin/password-reset.php [L]
+
+# Handle product slug URLs (SEO-friendly URLs)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^product/([^/]+)/?$ product.php?slug=$1 [L,QSA]
+
+# Handle clean URLs - check if PHP file exists
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/$1.php -f
+RewriteRule ^([^.]+)/?$ $1.php [L]
+
+# Handle root URL
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^/?$ index.php [L]
+
+# Fallback to router.php for clean URLs
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . router.php [L]

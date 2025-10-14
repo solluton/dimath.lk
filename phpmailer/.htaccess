@@ -1,0 +1,33 @@
+# PHPMailer Directory Security Protection
+# Deny all direct access to PHPMailer files
+
+# Prevent directory browsing
+Options -Indexes
+
+# Deny access to all files
+<Files "*">
+    Require all denied
+</Files>
+
+# Deny access to hidden files
+<Files ".*">
+    Require all denied
+</Files>
+
+# Deny access to .htaccess files
+<Files ".htaccess">
+    Require all denied
+</Files>
+
+# Set security headers
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options nosniff
+    Header always set X-Frame-Options DENY
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set X-Robots-Tag "noindex, nofollow"
+</IfModule>
+
+# Custom error pages
+ErrorDocument 403 /access-denied.php
+ErrorDocument 404 /404.php

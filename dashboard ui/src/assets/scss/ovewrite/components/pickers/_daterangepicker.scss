@@ -1,0 +1,112 @@
+/*
+<--!----------------------------------------------------------------!-->
+<--! DateRangePicker SCSS !-->
+<--!----------------------------------------------------------------!-->
+*/
+.daterangepicker {
+    margin-top: -1px;
+    font-family: inherit;
+    background: var(--#{$prefix}tertiary-bg);
+    border-color: var(--#{$prefix}border-color);
+    box-shadow: $dropdown-box-shadow;
+
+
+    &:after,
+    &:before {
+        content: none;
+    }
+
+    td.in-range,
+    td.available:hover,
+    th.available:hover {
+        color: var(--#{$prefix}black);
+        background: var(--#{$prefix}secondary-bg);
+    }
+
+    td {
+
+        &.active,
+        &.active:hover {
+            background-color: $primary;
+        }
+
+        &.off,
+        &.off.in-range,
+        &.off.start-date,
+        &.off.end-date {
+            color: var(--#{$prefix}gray-300);
+            background: var(--#{$prefix}tertiary-bg);
+        }
+    }
+
+    .calendar-table {
+        background: var(--#{$prefix}tertiary-bg);
+        border: none;
+
+        thead {
+            tr {
+                th {
+                    height: 2rem;
+                    width: 2rem;
+                    color: var(--#{$prefix}dark);
+                    line-height: calc(2rem - 2px);
+                    text-transform: uppercase;
+                    font-weight: $font-weight-bold;
+                    font-size: $font-size-xs;
+                }
+            }
+        }
+
+        .next,
+        .prev {
+            span {
+                border-width: 0 1px 1px 0;
+                border-color: var(--#{$prefix}dark);
+            }
+        }
+    }
+
+    .drp-buttons {
+        border-top-color: var(--#{$prefix}border-color);
+
+        .btn {
+            padding: 0.25rem 0.75rem !important;
+            font-size: $font-size-xs !important;
+        }
+    }
+
+    select {
+
+        &.monthselect,
+        &.yearselect {
+            height: 2rem;
+            line-height: calc(2rem - 2px);
+            color: var(--#{$prefix}dark);
+            background: var(--#{$prefix}tertiary-bg);
+            border-color: var(--#{$prefix}border-color);
+            border-radius: $border-radius-sm;
+        }
+    }
+
+    .ranges {
+        li {
+            text-transform: uppercase;
+            color: var(--#{$prefix}dark);
+            font-size: $font-size-xs;
+            font-weight: $font-weight-semibold;
+
+            &.active {
+                background-color: $primary;
+            }
+
+            &:hover {
+                background: var(--#{$prefix}secondary-bg);
+            }
+        }
+
+    }
+
+    .drp-calendar.left {
+        border-color: var(--#{$prefix}border-color) !important;
+    }
+}

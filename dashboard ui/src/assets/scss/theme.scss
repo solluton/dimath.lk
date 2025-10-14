@@ -1,0 +1,116 @@
+/*!
+<--!----------------------------------------------------------------!-->
+<--!----------------------------------------------------------------!-->
+ * Template Name: Expodash - Admin & Dashboard Template
+ * Description: Fully Responsive Admin & Dashboard Template.
+ * Copyright: WRAPCODERS
+ * Author: WRAPCODERS
+ * Version: 1.0.0
+ * File: theme.min.css
+<--!----------------------------------------------------------------!-->
+<--!----------------------------------------------------------------!-->
+*/
+
+// BOOTSTRAP-FUNCTIONS
+@import "./../../../node_modules/bootstrap/scss/functions";
+
+// OVERWRITE-VARIABLES
+@import "./ovewrite/theme/theme-variables";
+@import "./ovewrite/theme/theme-variables-dark";
+
+// USER-VARIABLES
+@import "./ovewrite/theme/user-variables";
+@import "./ovewrite/theme/user-variables-dark";
+
+// OVERWRITE-ROOT-MIXINS-UTILITIES
+@import "./ovewrite/theme/theme-root";
+@import "./ovewrite/theme/theme-mixins";
+@import "./ovewrite/theme/theme-utilities";
+
+
+// BOOTSTRAP-CORE
+@import "./../../../node_modules/bootstrap/scss/bootstrap";
+
+// THEME STRUCTURE
+@import "./ovewrite/structure/theme-common";
+@import "./ovewrite/structure/theme-menu";
+@import "./ovewrite/structure/theme-header";
+@import "./ovewrite/structure/theme-footer";
+
+// THEME DASHBORDS
+@import "./ovewrite/dashbaords/dashbaord";
+
+// THEME APPS
+@import "./ovewrite/apps/apps";
+@import "./ovewrite/apps/chat";
+@import "./ovewrite/apps/email";
+@import "./ovewrite/apps/invoice";
+@import "./ovewrite/apps/kanban";
+@import "./ovewrite/apps/calendar";
+
+// THEME PAGES
+@import "./ovewrite/pages/account";
+
+// BASE COMPONENTS
+@import "./ovewrite/components/base/reboot";
+@import "./ovewrite/components/base/common";
+@import "./ovewrite/components/base/accordion";
+@import "./ovewrite/components/base/avatar";
+@import "./ovewrite/components/base/button";
+@import "./ovewrite/components/base/card";
+@import "./ovewrite/components/base/dropdown";
+@import "./ovewrite/components/base/modal";
+@import "./ovewrite/components/base/navtab";
+@import "./ovewrite/components/base/miscellaneous";
+
+// CHARTS COMPONENTS
+@import "./ovewrite/components/charts/charts";
+@import "./ovewrite/components/charts/cprogress";
+@import "./ovewrite/components/charts/apexcharts";
+
+// EDITORS COMPONENTS
+@import "./ovewrite/components/editors/quill";
+@import "./ovewrite/components/editors/tinymce";
+@import "./ovewrite/components/editors/summernote";
+
+// FORMS COMPONENTS
+@import "./ovewrite/components/forms/checks";
+@import "./ovewrite/components/forms/adv-checks";
+@import "./ovewrite/components/forms/adv-radios";
+@import "./ovewrite/components/forms/adv-switches";
+@import "./ovewrite/components/forms/touchspin";
+@import "./ovewrite/components/forms/nouislider";
+
+// ICONS COMPONENTS
+@import "./ovewrite/components/icons/icons";
+
+// MAPS COMPONENTS
+@import "./ovewrite/components/maps/gmaps";
+@import "./ovewrite/components/maps/vector";
+
+// PICKERS COMPONENTS
+@import "./ovewrite/components/pickers/flatpickr";
+@import "./ovewrite/components/pickers/datepicker";
+@import "./ovewrite/components/pickers/daterangepicker";
+@import "./ovewrite/components/pickers/selectpicker";
+@import "./ovewrite/components/pickers/timepicker";
+
+// SELECT COMPONENTS
+@import "./ovewrite/components/selects/select2";
+@import "./ovewrite/components/selects/selectize";
+@import "./ovewrite/components/selects/tagify";
+@import "./ovewrite/components/selects/choices";
+
+// TABLES COMPONENTS
+@import "./ovewrite/components/tables/tables";
+@import "./ovewrite/components/tables/bstables";
+@import "./ovewrite/components/tables/datatables";
+
+// EXTENDED COMPONENTS
+@import "./ovewrite/components/extended/prism";
+@import "./ovewrite/components/extended/jstree";
+@import "./ovewrite/components/extended/swiper";
+@import "./ovewrite/components/extended/gLightbox";
+@import "./ovewrite/components/extended/sweetalert2";
+@import "./ovewrite/components/extended/owlcarousel";
+@import "./ovewrite/components/extended/perfectScrollbar";

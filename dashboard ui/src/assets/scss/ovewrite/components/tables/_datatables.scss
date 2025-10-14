@@ -1,0 +1,57 @@
+/*
+<--!----------------------------------------------------------------!-->
+<--! dataTables SCSS !-->
+<--!----------------------------------------------------------------!-->
+*/
+:root,
+[data-bs-theme="light"] {
+    --dt-row-hover: 0, 25, 75;
+    --dt-row-stripe: 0, 25, 75;
+    --dt-column-ordering: 0, 25, 75;
+}
+
+
+div.dataTables_wrapper {
+
+    div.dataTables_length,
+    div.dataTables_filter,
+    div.dataTables_info,
+    div.dataTables_paginate {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        padding-right: 1.5rem !important;
+        padding-left: 1.5rem !important;
+    }
+
+    div.dataTables_info {
+        float: left;
+        padding-top: 0.5em;
+    }
+
+    table.dataTable {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        border-top: 1px solid var(--#{$prefix}border-color);
+
+        tr.group,
+        tr.group:hover {
+            font-weight: $font-weight-bold;
+            color: var(--#{$prefix}dark) !important;
+            background-color: var(--#{$prefix}gray-100) !important;
+        }
+    }
+
+    .dt-buttons {
+        float: left;
+        padding: 0 1.5rem;
+    }
+}
+
+.card-table {
+
+    div.dataTables_scrollBody,
+    div.dataTables_scrollFootInner table.table-bordered tr th:first-child,
+    div.dataTables_scrollHeadInner table.table-bordered tr th:first-child {
+        border: none !important;
+    }
+}

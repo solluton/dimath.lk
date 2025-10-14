@@ -1,0 +1,13 @@
+/*
+<--!----------------------------------------------------------------!-->
+<--! THEME ROOT SCSS !-->
+<--!----------------------------------------------------------------!-->
+*/
+:root,
+[data-bs-theme="light"] {
+	--#{$prefix}navigation-width: 20rem;
+	--#{$prefix}navigation-width-mini: 6.25rem;
+	--#{$prefix}expo-bg-body: #{$expo-bg-body};
+	--#{$prefix}expo-hover-bg: #{$expo-bg-body};
+	--#{$prefix}expo-btn-hover: var(--#{$prefix}gray-200);
+}

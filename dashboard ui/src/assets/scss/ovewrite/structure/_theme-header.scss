@@ -1,0 +1,79 @@
+/*
+<--!----------------------------------------------------------------!-->
+<--! Expodash Header SCSS !-->
+<--!----------------------------------------------------------------!-->
+*/
+.edash-header {
+    border-bottom: 1px solid var(--#{$prefix}border-color);
+    backdrop-filter: saturate(100%) blur(8px);
+
+    .edash-header-container {
+        .edash-header-left {
+            .edash-search-wrapper {
+                .edash-search {
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: $transition-base;
+
+                    &.show {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+
+                }
+            }
+        }
+
+        .edash-header-left,
+        .edash-header-right {
+            .edash-drop-item {
+                position: relative;
+                transition: $transition-base;
+
+                &:hover {
+                    color: var(--#{$prefix}primary);
+                    background: var(--#{$prefix}hover-bg);
+
+                }
+
+                .fi,
+                i[class*=" fi-rr-"]:before,
+                i[class^=fi-rr-]:before,
+                span[class*=fi-rr-]:before,
+                span[class^=fi-rr-]:before {
+                    font-size: $font-size-lg;
+                }
+            }
+        }
+
+        .dropdown {
+            @include media-breakpoint-down(sm) {
+                position: static;
+            }
+
+            .dropdown-menu {
+                animation: 0.3s ease-in-out 0s normal forwards 1 fadein;
+
+                @keyframes fadein {
+                    from {
+                        opacity: 0;
+                        margin-top: 1rem;
+                    }
+
+                    to {
+                        opacity: 1;
+                        margin-top: 0rem;
+                    }
+                }
+
+                @include media-breakpoint-down(sm) {
+                    min-width: auto;
+                    width: 100%;
+                    left: 0.75rem !important;
+                    right: 0.75rem !important;
+                    top: 0.25rem !important;
+                }
+            }
+        }
+    }
+}

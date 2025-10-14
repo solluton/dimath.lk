@@ -1,0 +1,12 @@
+# Featured Home Images Directory Security Protection
+# Inherits security rules from parent .htaccess
+
+# Allow image files
+<FilesMatch "\.(jpg|jpeg|png|gif|webp|avif)$">
+    Require all granted
+</FilesMatch>
+
+# Deny everything else
+<FilesMatch "^(?!.*\.(jpg|jpeg|png|gif|webp|avif)$).*$">
+    Require all denied
+</FilesMatch>

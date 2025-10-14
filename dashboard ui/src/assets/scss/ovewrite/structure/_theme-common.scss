@@ -1,0 +1,99 @@
+/*
+<--!----------------------------------------------------------------!-->
+<--! Expodash Common SCSS !-->
+<--!----------------------------------------------------------------!-->
+*/
+.main-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+
+    #edash-main {
+        display: flex;
+        flex-basis: 100%;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        min-height: 100vh;
+        background-color: var(--#{$prefix}expo-bg-body);
+        margin-left: var(--#{$prefix}navigation-width);
+        transition: $transition-base;
+
+        .edash-page-container {
+            // padding-left: 0;
+            // padding-right: 0;
+            flex-grow: 1;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+
+            @include media-breakpoint-up(md) {
+                margin-top: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .edash-apps-main-card {
+                #edash-aside-left {
+                    @include media-breakpoint-down(lg) {
+                        @include transform-hide(-100%);
+                        transition: $transition-base;
+
+                        &.aside-left-open {
+                            z-index: 3;
+                            @include transform-show(0);
+                        }
+                    }
+                }
+
+                #edash-aside-right {
+                    @include transform-hide(100%);
+                    transition: $transition-base;
+
+                    &.aside-right-open {
+                        z-index: 3;
+                        @include transform-show(0);
+                    }
+                }
+
+                .edash-backdrop {
+                    z-index: 2;
+                    top: 1px;
+                    left: 1px;
+                    right: 1px;
+                    bottom: 1px;
+                    overflow: hidden;
+                    position: absolute;
+                    background: rgba(0, 0, 0, 0.5);
+                    border-radius: $border-radius-lg;
+                    transition: $transition-fade;
+                    display: none;
+
+                    &.edash-left-backdrop {
+                        @include media-breakpoint-down(lg) {
+                            display: block;
+                        }
+                    }
+
+                    &.edash-right-backdrop {
+                        display: block;
+                    }
+                }
+            }
+
+            .edash-settings-aside {
+                top: 7rem;
+                height: calc(100vh - 7rem);
+
+                @include media-breakpoint-down(md) {
+                    top: 6rem;
+                    height: calc(100vh - 6rem);
+                }
+
+                .nav-link.active {
+                    background-color: var(--#{$prefix}secondary-bg);
+                    border-radius: $border-radius-sm;
+                }
+            }
+        }
+    }
+}

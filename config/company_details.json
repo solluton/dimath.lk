@@ -1,0 +1,57 @@
+{
+  "company_name": "Dimath Sports (Pvt) Ltd",
+  "website": "http://localhost/dimathsports",
+  "email": "info@dimathsports.lk",
+  "phone": "+94 769 175 175",
+  "address": {
+    "street": "Dimath Sports (Private) Limited",
+    "city": "Batapola",
+    "postal_code": "80320",
+    "country": "Sri Lanka"
+  },
+  "business_hours": {
+    "monday_friday": "9:00 AM - 5:00 PM",
+    "saturday": "9:00 AM - 4:00 PM",
+    "sunday": "10:00 AM - 2:00 PM"
+  },
+  "social_media": {
+    "facebook": "https://facebook.com/dimathsports",
+    "linkedin": "https://linkedin.com/company/dimathsports",
+    "twitter": "https://twitter.com/dimathsports",
+    "instagram": "https://instagram.com/dimathsports"
+  },
+  "logo_url": "/images/dimath-logo.avif",
+  "email_templates": {
+    "admin_notification": {
+      "subject": "New Website Inquiry from {{first_name}} - Dimath Sports",
+      "congratulations_message": "🎉 Great! A new customer inquiry has been received!",
+      "lead_info_title": "📋 Inquiry Details",
+      "show_cta_button": false,
+      "cta_button_text": "View Inquiry in Dashboard",
+      "cta_button_url": "/admin/contact-leads.php",
+      "powered_by_text": "Powered by Dimath Sports"
+    },
+    "auto_reply": {
+      "subject": "{{first_name}}, thank you for contacting Dimath Sports",
+      "header_title": "{{greeting}}",
+      "header_subtitle": "Your message has been received",
+      "greeting": "Thank you for reaching out to Dimath Sports!",
+      "personal_greeting": "Hello {{first_name}},",
+      "main_message": "{{greeting_time}} {{first_name}}! We have successfully received your message and our team will review it carefully. We strive to respond {{response_urgency}} with the information you need about our products and services.",
+      "closing_message": "We appreciate your interest in Dimath Sports and look forward to assisting you.",
+      "submission_details_title": "📋 Your Inquiry Details:",
+      "submission_subject_label": "Subject:",
+      "submission_date_label": "Submitted:",
+      "response_time_label": "Expected Response:",
+      "response_time": "24 hours",
+      "contact_info_title": "📞 Contact Information",
+      "business_hours_title": "🕒 Business Hours:",
+      "footer_thank_you": "Thank you for choosing Dimath Sports",
+      "copyright_text": "© {{current_year}} Dimath Sports. All rights reserved."
+    }
+  },
+  "variables": {
+    "response_time": "24 hours",
+    "website_source": "website"
+  }
+}

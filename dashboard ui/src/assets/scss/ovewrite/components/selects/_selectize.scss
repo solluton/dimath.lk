@@ -1,0 +1,64 @@
+/*
+<--!----------------------------------------------------------------!-->
+<--! SELECTIZE SCSS !-->
+<--!----------------------------------------------------------------!-->
+*/
+.selectize-input,
+.selectize-input.full {
+    background-color: var(--#{$prefix}tertiary-bg);
+    border-color: var(--#{$prefix}border-color);
+
+    .item {
+        color: var(--#{$prefix}dark);
+    }
+
+    &.focus {
+        box-shadow: none;
+        border-color: var(--#{$prefix}primary);
+        background-color: transparent;
+    }
+}
+
+.selectize-control {
+    &.single {
+        .selectize-input.input-active {
+            background: var(--#{$prefix}tertiary-bg);
+        }
+    }
+
+    &.multi {
+        .selectize-input>div {
+            background: var(--#{$prefix}secondary-bg);
+            color: var(--#{$prefix}dark);
+
+            &.active {
+                background: var(--#{$prefix}primary);
+            }
+        }
+
+        &.plugin-remove_button {
+            .item {
+                .remove {
+                    border-left-color: var(--#{$prefix}border-color);
+                }
+            }
+        }
+    }
+}
+
+.selectize-dropdown,
+.selectize-dropdown.form-control {
+    color: var(--#{$prefix}dark);
+    background-color: var(--#{$prefix}tertiary-bg);
+    border-color: var(--#{$prefix}border-color);
+}
+
+.selectize-dropdown .active:not(.selected),
+.selectize-dropdown .optgroup-header {
+    background: var(--#{$prefix}secondary-bg);
+    color: var(--#{$prefix}dark);
+}
+
+.selectize-dropdown.plugin-optgroup_columns .optgroup {
+    border-right-color: var(--#{$prefix}border-color);
+}

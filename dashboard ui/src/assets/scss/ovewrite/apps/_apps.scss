@@ -1,0 +1,59 @@
+/*
+<--!----------------------------------------------------------------!-->
+<--! Apps Common SCSS !-->
+<--!----------------------------------------------------------------!-->
+*/
+.edash-apps-main-card {
+    height: calc(100vh - 130px);
+
+    @include media-breakpoint-down(md) {
+        height: calc(100vh - 112px)
+    }
+
+    .edash-aside-wd-md {
+        width: 100%;
+        max-width: map-get($sizings, 300);
+    }
+
+    .edash-aside-wd-lg {
+        width: 100%;
+        max-width: map-get($sizings, 350);
+    }
+
+    .edash-aside-wd-full {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    @include media-breakpoint-down(lg) {
+        .edash-main-content {
+            transition: $transition-base;
+        }
+
+        .edash-aside-wd-md~.edash-main-content {
+            margin-left: -#{map-get($sizings, 300)};
+        }
+
+        .edash-aside-wd-lg~.edash-main-content {
+            margin-left: -#{map-get($sizings, 350)};
+        }
+    }
+
+    .edash-aside-left-body,
+    .edash-aside-right-body,
+    .edash-main-content-body {
+        height: calc(100vh - 275px);
+
+        @include media-breakpoint-down(md) {
+            height: calc(100vh - 255px);
+        }
+
+        &.edash-without-aside-footer {
+            height: calc(100vh - 224px);
+
+            @include media-breakpoint-down(md) {
+                height: calc(100vh - 195px);
+            }
+        }
+    }
+}
