@@ -86,9 +86,10 @@ try {
   <meta charset="utf-8" />
   <meta http-equiv="x-ua-compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Dimath Sports - Email Queue Management" />
-  <meta name="keyword" content="dimath, cinnamon, email, queue, admin" />
-  <meta name="author" content="Dimath Sports" />
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+  <meta name="description" content="Dimath Group - Email Queue Management" />
+  <meta name="keyword" content="dimath, group, email, queue, admin" />
+  <meta name="author" content="Dimath Group" />
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">

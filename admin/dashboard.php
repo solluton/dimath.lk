@@ -35,6 +35,7 @@ try {
   <meta charset="utf-8" />
   <meta http-equiv="x-ua-compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
   <meta name="description" content="Dimath Group - Admin Dashboard" />
   <meta name="keyword" content="dimath, group, admin, dashboard" />
   <meta name="author" content="Dimath Group" />

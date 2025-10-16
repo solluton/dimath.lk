@@ -79,6 +79,7 @@ $csrf_token = generateCSRFToken();
   <meta charset="utf-8" />
   <meta http-equiv="x-ua-compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
   <meta name="description" content="Dimath Group - Password Reset" />
   <meta name="keyword" content="dimath, group, password, reset, admin" />
   <meta name="author" content="Dimath Group" />

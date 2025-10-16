@@ -30,6 +30,7 @@ $page_description = "Find all pages and services on the Dimath Group website. Br
   <meta property="og:type" content="website">
   <meta content="summary_large_image" name="twitter:card">
   <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
   <meta content="Webflow" name="generator">
   <?php include 'includes/scripts-global.php'; ?>
 </head>
