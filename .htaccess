@@ -16,8 +16,7 @@ RewriteRule ^\.env - [F,L]
 # Handle static assets (CSS, JS, images, etc.)
 RewriteRule ^(css|js|images|fonts|uploads|documents|phpmailer)/ - [L]
 
-# Block direct access to config files (except those needed by the app)
-RewriteRule ^config/ - [F,L]
+# Note: Config files are accessible but contain no sensitive data
 
 # Handle admin password reset URL
 RewriteCond %{REQUEST_FILENAME} !-f
