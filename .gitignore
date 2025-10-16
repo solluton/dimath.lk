@@ -10,6 +10,7 @@ env.example
 *.db
 *.sqlite
 *.sqlite3
+database/
 
 # Logs
 *.log
