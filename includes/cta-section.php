@@ -322,13 +322,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Check if it has at least 7 digits and not more than 15
     if (digitsOnly.length < 7 || digitsOnly.length > 15) {
-      return 'Invalid phone number.';
+      return 'Enter a valid phone number.';
     }
     
     // Check if it contains valid characters (digits, +, -, spaces, parentheses)
     const validCharsRegex = /^[\d\+\-\s\(\)]+$/;
     if (!validCharsRegex.test(phone)) {
-      return 'Invalid phone number.';
+      return 'Enter a valid phone number.';
     }
     
     return null;

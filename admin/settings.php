@@ -20,16 +20,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
         // Get form data
         $contact_email = trim($_POST['contact_email'] ?? '');
-        $email_enabled = isset($_POST['email_enabled']) ? '1' : '0';
         
         // Validate required fields
         if (empty($contact_email) || !filter_var($contact_email, FILTER_VALIDATE_EMAIL)) {
             $error = 'Please enter a valid contact email address.';
         } else {
-            // Update settings (only contact_email and email_enabled)
+            // Update settings (only contact_email)
             $settings = [
-                'contact_email' => $contact_email,
-                'email_enabled' => $email_enabled
+                'contact_email' => $contact_email
             ];
             
             $stmt = $pdo->prepare("UPDATE admin_settings SET setting_value = ? WHERE setting_key = ?");
@@ -65,9 +63,9 @@ try {
   <meta charset="utf-8" />
   <meta http-equiv="x-ua-compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="NeoMed Pharma - Admin Settings" />
-  <meta name="keyword" content="neomed, pharma, settings, admin" />
-  <meta name="author" content="NeoMed Pharma" />
+  <meta name="description" content="Dimath Group - Admin Settings" />
+  <meta name="keyword" content="dimath, group, settings, admin" />
+  <meta name="author" content="Dimath Group" />
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -125,14 +123,14 @@ try {
           <div class="col-12">
             <div class="d-flex align-items-center justify-content-between">
               <div>
-                <h2 class="h4 fw-semibold text-dark">General Settings</h2>
+                <h2 class="h4 fw-semibold text-dark">Contact Email Settings</h2>
                 <nav aria-label="breadcrumb">
                   <ol class="breadcrumb mb-0">
                     <li class="breadcrumb-item">
                       <a href="dashboard.php">Home</a>
                     </li>
                     <li class="breadcrumb-item active" aria-current="page">
-                      Settings
+                      Contact Email Settings
                     </li>
                   </ol>
                 </nav>
@@ -161,10 +159,10 @@ try {
         <!-- Settings Form -->
         <div class="card mx-4">
           <div class="card-header">
-            <h5 class="card-title mb-0">General Settings</h5>
+            <h5 class="card-title mb-0">Contact Email Settings</h5>
           </div>
           <div class="card-body">
-            <form method="POST" action="" onsubmit="return confirmSettingsUpdate()">
+            <form method="POST" action="" onsubmit="return confirmSettingsUpdate(this)">
               <?= getCSRFTokenField() ?>
               <div class="row">
                 <!-- Contact Email -->
@@ -175,18 +173,7 @@ try {
                   <div class="form-text">Email address to receive contact form submissions</div>
                 </div>
                 
-                <!-- Email Enabled -->
-                <div class="col-md-6 mb-3">
-                  <label class="form-label">Email Notifications</label>
-                  <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="email_enabled" name="email_enabled" 
-                           <?php echo ($settings['email_enabled'] ?? '1') == '1' ? 'checked' : ''; ?>>
-                    <label class="form-check-label" for="email_enabled">
-                      Enable email notifications
-                    </label>
-                  </div>
-                  <div class="form-text">Send emails when contact forms are submitted</div>
-                </div>
+                <!-- Email notifications removed -->
               </div>
               
               <div class="d-flex gap-2 mt-4">
@@ -209,7 +196,7 @@ try {
   
   <!-- SweetAlert2 Confirmation -->
   <script>
-    function confirmSettingsUpdate() {
+    function confirmSettingsUpdate(form) {
       Swal.fire({
         title: 'Update Settings?',
         text: 'Are you sure you want to update the system settings? This will affect how the website functions.',
@@ -223,10 +210,7 @@ try {
       }).then((result) => {
         if (result.isConfirmed) {
           // Submit the form
-          event.target.submit();
-        } else {
-          // Prevent form submission
-          return false;
+          form.submit();
         }
       });
       return false; // Prevent default form submission

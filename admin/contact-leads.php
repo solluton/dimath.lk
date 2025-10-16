@@ -210,7 +210,6 @@ try {
                       <th>Email</th>
                       <th>Message Preview</th>
                       <th>Status</th>
-                      <th>Terms Accepted</th>
                       <th>Date</th>
                       <th>Action</th>
                     </tr>
@@ -228,11 +227,6 @@ try {
                                 ($lead['status'] == 'replied' ? 'info' : 'success')); 
                           ?>">
                             <?php echo ucfirst($lead['status']); ?>
-                          </span>
-                        </td>
-                        <td>
-                          <span class="badge bg-<?php echo $lead['terms_accepted'] ? 'success' : 'danger'; ?>">
-                            <?php echo $lead['terms_accepted'] ? 'Yes' : 'No'; ?>
                           </span>
                         </td>
                         <td><?php echo formatSriLankaDate($lead['created_at'], 'M j, Y'); ?></td>
@@ -258,11 +252,6 @@ try {
                                   <p><strong>Name:</strong> <?php echo htmlspecialchars($lead['name']); ?></p>
                                   <p><strong>Email:</strong> <a href="mailto:<?php echo htmlspecialchars($lead['email']); ?>"><?php echo htmlspecialchars($lead['email']); ?></a></p>
                                   <p><strong>IP Address:</strong> <?php echo htmlspecialchars($lead['ip_address'] ?: 'N/A'); ?></p>
-                                  <p><strong>Terms Accepted:</strong> 
-                                    <span class="badge bg-<?php echo $lead['terms_accepted'] ? 'success' : 'danger'; ?>">
-                                      <?php echo $lead['terms_accepted'] ? 'Yes' : 'No'; ?>
-                                    </span>
-                                  </p>
                                 </div>
                                 <div class="col-md-6">
                                   <h6>Lead Information</h6>

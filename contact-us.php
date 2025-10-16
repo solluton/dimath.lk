@@ -332,9 +332,7 @@ margin: 0rem !important;
                           <option value="Other">Other</option>
                         </select></div>
                       <div class="form_field-wrapper"><label for="Contact-12-Message-2" class="form_field-label">Message</label><textarea id="Contact-12-Message" name="message" maxlength="5000" data-name="Contact 12 Message" placeholder="Please describe your inquiry or message in detail..." required="" class="form_input is-text-area w-input"></textarea></div>
-                      <div class="margin-bottom margin-xsmall"><label id="Contact-2-Checkbox" class="w-checkbox form_checkbox">
-                          <div class="w-checkbox-input w-checkbox-input--inputType-custom form_checkbox-icon"></div><input type="checkbox" name="terms" id="Contact-12-Checkbox" data-name="Contact 2 Checkbox" required="" style="opacity:0;position:absolute;z-index:-1"><span for="Contact-2-Checkbox" class="form_checkbox-label w-form-label">I accept the <a href="#" class="text-style-link">Terms</a></span>
-                        </label></div>
+                      <!-- Terms acceptance checkbox removed -->
                       <div class="form-success fade-in" id="form-success-message" style="display: none; background-color: #d4edda; border: 1px solid #c3e6cb; color: #155724; padding: 15px; border-radius: 5px; margin-bottom: 15px; font-weight: bold;">
                         <div class="success-text">Thank you for your inquiry! Our team will review your message and get back to you within 24 hours.</div>
                       </div>
@@ -399,7 +397,7 @@ margin: 0rem !important;
                         <div><?= getCompanyAddress() ?></div>
                         <div class="margin-top margin-small">                    
                           <div class="button-group">
-                            <a href="https://maps.google.com/?q=<?= urlencode(getCompanyAddress()) ?>" target="_blank" class="button is-link is-icon w-inline-block">
+                            <a href="https://maps.app.goo.gl/YGtZGx7Qc2REhVvx5" target="_blank" class="button is-link is-icon w-inline-block">
                               <div>Get Directions</div>
                               <div class="icon-embed-xxsmall w-embed"><svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                   <path d="M6 3L11 8L6 13" stroke="CurrentColor" stroke-width="1.5"></path>
@@ -492,8 +490,8 @@ margin: 0rem !important;
       var v = (el.value||'').trim();
       if(!v){ showError(el, ''); return true; }
       var digits = v.replace(/\D/g,'');
-      if(digits.length < 7 || digits.length > 15){ showError(el, 'Enter a valid phone (7-15 digits).'); return false; }
-      if(!/^[\d\+\-\s\(\)]+$/.test(v)){ showError(el, 'Phone contains invalid characters.'); return false; }
+      if(digits.length < 7 || digits.length > 15){ showError(el, 'Enter a valid phone number.'); return false; }
+      if(!/^[\d\+\-\s\(\)]+$/.test(v)){ showError(el, 'Enter a valid phone number.'); return false; }
       showError(el, ''); return true;
     }
     function validateSubject(){

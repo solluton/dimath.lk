@@ -86,17 +86,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
         // Check if it has at least 7 digits and not more than 15
         if (strlen($digits_only) < 7 || strlen($digits_only) > 15) {
-            $validation_errors['phone'] = 'Phone number must be between 7 and 15 digits.';
+            $validation_errors['phone'] = 'Enter a valid phone number.';
         }
         
         // Check if it contains valid characters (digits, +, -, spaces, parentheses)
         if (!preg_match('/^[\d\+\-\s\(\)]+$/', $phone)) {
-            $validation_errors['phone'] = 'Phone number contains invalid characters.';
+            $validation_errors['phone'] = 'Enter a valid phone number.';
         }
         
         // Check for suspicious patterns
         if (preg_match('/(.)\1{4,}/', $phone)) {
-            $validation_errors['phone'] = 'Phone number appears to be invalid.';
+            $validation_errors['phone'] = 'Enter a valid phone number.';
         }
     }
     
@@ -112,9 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $validation_errors['subject'] = 'Subject is too long.';
     }
     // Terms acceptance (required)
-    if (empty($terms)) {
-        $validation_errors['terms'] = 'You must accept the Terms.';
-    }
+    // Terms acceptance validation removed - no longer tracking
     
     // Message validation
     if (empty($message_text)) {
@@ -208,7 +206,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $subject = htmlspecialchars($subject, ENT_QUOTES, 'UTF-8');
             $message_text = htmlspecialchars($message_text, ENT_QUOTES, 'UTF-8');
             
-            $stmt = $pdo->prepare("INSERT INTO contact_leads (name, first_name, last_name, email, phone, company, subject, message, terms_accepted, ip_address, user_agent) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            $stmt = $pdo->prepare("INSERT INTO contact_leads (name, first_name, last_name, email, phone, company, subject, message, ip_address, user_agent) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             
             $execute_result = $stmt->execute([
                 $nameCombined,
@@ -219,7 +217,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $company,
                 $subject,
                 $message_text,
-                !empty($terms) ? 1 : 0,
                 $ip_address,
                 $user_agent
             ]);
