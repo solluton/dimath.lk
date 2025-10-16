@@ -8,11 +8,20 @@ function getSimpleDBConnection() {
     require_once __DIR__ . '/env.php';
     loadEnv();
     
-    $host = $_ENV['DB_HOST'] ?? 'localhost';
-    $dbname = $_ENV['DB_NAME'] ?? 'cinammon';
-    $username = $_ENV['DB_USER'] ?? 'root';
-    $password = $_ENV['DB_PASS'] ?? '';
-    $port = $_ENV['DB_PORT'] ?? '3306';
+    // Require critical environment variables (no fallbacks)
+    function requireEnvValue($key) {
+        $val = env($key);
+        if ($val === null || $val === '') {
+            throw new Exception("Missing required environment variable: $key. Please set it in .env file.");
+        }
+        return $val;
+    }
+    
+    $host = requireEnvValue('DB_HOST');
+    $dbname = requireEnvValue('DB_NAME');
+    $username = requireEnvValue('DB_USER');
+    $password = env('DB_PASS', ''); // Password can be empty
+    $port = env('DB_PORT', '3306'); // Port can have default
     
     try {
         $dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4";

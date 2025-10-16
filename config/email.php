@@ -14,16 +14,25 @@ use PHPMailer\PHPMailer\Exception;
  * Send email using PHPMailer with SMTP authentication
  */
 function sendEmail($to, $subject, $message, $is_html = false, $from_email = null, $from_name = null) {
-    // Get email settings from environment
-    $smtp_host = env('SMTP_HOST', 'premium5.web-hosting.com');
-    $smtp_port = env('SMTP_PORT', '587');
-    $smtp_username = env('SMTP_USERNAME', 'leads@solluton.com');
-    $smtp_password = env('SMTP_PASSWORD', '');
-    $smtp_encryption = env('SMTP_ENCRYPTION', 'tls');
+    // Require critical environment variables (no fallbacks)
+    function requireEnvValue($key) {
+        $val = env($key);
+        if ($val === null || $val === '') {
+            throw new Exception("Missing required environment variable: $key. Please set it in .env file.");
+        }
+        return $val;
+    }
     
-    // Default from email and name
-    $from_email = $from_email ?: env('FROM_EMAIL', 'info@dimath.lk');
-    $from_name = $from_name ?: env('FROM_NAME', 'Dimath Group');
+    // Get email settings from environment (no hardcoded fallbacks)
+    $smtp_host = requireEnvValue('SMTP_HOST');
+    $smtp_port = env('SMTP_PORT', '587'); // Port can have default
+    $smtp_username = requireEnvValue('SMTP_USERNAME');
+    $smtp_password = env('SMTP_PASSWORD', ''); // Password can be empty
+    $smtp_encryption = env('SMTP_ENCRYPTION', 'tls'); // Encryption can have default
+    
+    // Default from email and name (require these)
+    $from_email = $from_email ?: requireEnvValue('FROM_EMAIL');
+    $from_name = $from_name ?: requireEnvValue('FROM_NAME');
     
     $mail = new PHPMailer(true);
     
@@ -117,7 +126,7 @@ function sendContactEmailNotification($lead_data) {
     }
     
     $to = $notification_email;
-    $subject = env('LEAD_EMAIL_SUBJECT', 'New Contact Form Submission - Dimath Sports');
+    $subject = env('LEAD_EMAIL_SUBJECT', 'New Contact Form Submission - Dimath Group');
     
     // Generate HTML email template
     $html_message = generateContactEmailTemplate($lead_data);
@@ -892,13 +901,13 @@ function sendTestEmail($to = 'info@dimath.lk') {
     
     $message = "This is a test email from Dimath Group website using PHPMailer.\n\n";
     $message .= "Test Details:\n";
-    $message .= "- Sent from: " . env('FROM_NAME', 'Dimath Group') . " <" . env('FROM_EMAIL', 'info@dimath.lk') . ">\n";
-    $message .= "- SMTP Host: " . env('SMTP_HOST', 'premium5.web-hosting.com') . "\n";
+    $message .= "- Sent from: " . env('FROM_NAME') . " <" . env('FROM_EMAIL') . ">\n";
+    $message .= "- SMTP Host: " . env('SMTP_HOST') . "\n";
     $message .= "- SMTP Port: " . env('SMTP_PORT', '587') . "\n";
-    $message .= "- SMTP Username: " . env('SMTP_USERNAME', 'leads@solluton.com') . "\n";
+    $message .= "- SMTP Username: " . env('SMTP_USERNAME') . "\n";
     $message .= "- SMTP Encryption: " . env('SMTP_ENCRYPTION', 'tls') . "\n";
     $message .= "- Test Time: " . date('Y-m-d H:i:s') . "\n";
-    $message .= "- Server: " . ($_SERVER['SERVER_NAME'] ?? 'localhost') . "\n";
+    $message .= "- Server: " . ($_SERVER['SERVER_NAME'] ?? 'Unknown') . "\n";
     $message .= "- PHP Version: " . phpversion() . "\n";
     $message .= "- PHPMailer: Enabled\n\n";
     $message .= "If you receive this email, the SMTP configuration is working correctly!\n\n";

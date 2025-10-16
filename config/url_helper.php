@@ -24,19 +24,25 @@ function getBaseUrl() {
         return $protocol . '://' . $site_url;
     }
 
-    // Check if we're running from command line with a default
+    // Check if we're running from command line
     if (php_sapi_name() === 'cli') {
-        $fallback = defined('DEFAULT_SITE_URL') ? DEFAULT_SITE_URL : env('SITE_URL', 'dimath.lk');
-        // Force HTTPS for production domain
-        if ($fallback === 'dimath.lk') {
-            return 'https://' . $fallback;
+        $site_url = env('SITE_URL');
+        if (!$site_url) {
+            throw new Exception("Missing required environment variable: SITE_URL. Please set it in .env file.");
         }
-        return 'http://' . $fallback;
+        // Force HTTPS for production domain
+        if ($site_url === 'dimath.lk') {
+            return 'https://' . $site_url;
+        }
+        return 'http://' . $site_url;
     }
     
     // Fallback: Auto-detect based on current environment
     $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
-    $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
+    $host = $_SERVER['HTTP_HOST'] ?? '';
+    if (empty($host)) {
+        throw new Exception("Unable to determine host. Please set SITE_URL in .env file.");
+    }
     $script_name = dirname($_SERVER['SCRIPT_NAME'] ?? '');
     
     // Remove trailing slash and normalize
