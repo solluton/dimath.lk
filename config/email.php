@@ -784,21 +784,7 @@ function generateAutoReplyTemplate($lead_data, $company_details) {
             margin-bottom: 15px;
         }
 
-        .social-links {
-            margin: 20px 0;
-        }
 
-        .social-link {
-            display: inline-block;
-            margin: 0 10px;
-            color: #007bff;
-            text-decoration: none;
-            font-size: 14px;
-        }
-
-        .social-link:hover {
-            color: #0056b3;
-        }
 
         .copyright {
             font-size: 12px;
@@ -877,14 +863,6 @@ function generateAutoReplyTemplate($lead_data, $company_details) {
                 </div>
                 ' : '') . '
 
-                ' . (!empty($company_details['business_hours']) ? '
-                <div class="business-hours">
-                    <div style="font-weight: 600; margin-bottom: 10px; color: #333;">' . processEmailTemplate($templates['business_hours_title'], $variables) . '</div>
-                    ' . (!empty($company_details['business_hours']['monday_friday']) ? '<div class="hours-item"><span>Monday - Friday:</span><span>' . htmlspecialchars($company_details['business_hours']['monday_friday']) . '</span></div>' : '') . '
-                    ' . (!empty($company_details['business_hours']['saturday']) ? '<div class="hours-item"><span>Saturday:</span><span>' . htmlspecialchars($company_details['business_hours']['saturday']) . '</span></div>' : '') . '
-                    ' . (!empty($company_details['business_hours']['sunday']) ? '<div class="hours-item"><span>Sunday:</span><span>' . htmlspecialchars($company_details['business_hours']['sunday']) . '</span></div>' : '') . '
-                </div>
-                ' : '') . '
             </div>
         </div>
 
@@ -894,13 +872,6 @@ function generateAutoReplyTemplate($lead_data, $company_details) {
                 ' . processEmailTemplate($templates['footer_thank_you'], $variables) . '
             </div>
             
-            ' . (!empty($company_details['social_media']) ? '
-            <div class="social-links">
-                ' . (!empty($company_details['social_media']['facebook']) ? '<a href="' . htmlspecialchars($company_details['social_media']['facebook']) . '" class="social-link" target="_blank">Facebook</a>' : '') . '
-                ' . (!empty($company_details['social_media']['linkedin']) ? '<a href="' . htmlspecialchars($company_details['social_media']['linkedin']) . '" class="social-link" target="_blank">LinkedIn</a>' : '') . '
-                ' . (!empty($company_details['social_media']['twitter']) ? '<a href="' . htmlspecialchars($company_details['social_media']['twitter']) . '" class="social-link" target="_blank">Twitter</a>' : '') . '
-            </div>
-            ' : '') . '
             
             <div class="copyright">
                 ' . processEmailTemplate($templates['copyright_text'], $variables) . '
