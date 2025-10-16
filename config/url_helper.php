@@ -15,7 +15,10 @@ function getBaseUrl() {
     // If SITE_URL is defined in env, prefer it (works for both web and CLI)
     $site_url = env('SITE_URL');
     if ($site_url) {
-        // Respect https only if explicitly set in runtime; otherwise default to https for live domains
+        // Force HTTPS for production domain dimath.lk, otherwise respect current protocol
+        if ($site_url === 'dimath.lk') {
+            return 'https://' . $site_url;
+        }
         $is_https = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on';
         $protocol = $is_https ? 'https' : 'http';
         return $protocol . '://' . $site_url;
@@ -23,7 +26,11 @@ function getBaseUrl() {
 
     // Check if we're running from command line with a default
     if (php_sapi_name() === 'cli') {
-        $fallback = defined('DEFAULT_SITE_URL') ? DEFAULT_SITE_URL : env('SITE_URL', 'localhost');
+        $fallback = defined('DEFAULT_SITE_URL') ? DEFAULT_SITE_URL : env('SITE_URL', 'dimath.lk');
+        // Force HTTPS for production domain
+        if ($fallback === 'dimath.lk') {
+            return 'https://' . $fallback;
+        }
         return 'http://' . $fallback;
     }
     

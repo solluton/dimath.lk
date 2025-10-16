@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title>Dimath Group Companies | Cinnamon, Sports, Pharma, Fitness &amp; Spices in Sri Lanka</title>
-  <meta content="Discover Dimath Group’s ventures across five industries: Ceylon cinnamon export, sporting goods import &amp; distribution, sports &amp; fitness facilities, organic spice export, and pharmaceutical distribution. Connecting Sri Lanka to the world." name="description">
+  <meta content="Discover Dimath Group's ventures across five industries: Ceylon cinnamon export, sporting goods import &amp; distribution, sports &amp; fitness facilities, organic spice export, and pharmaceutical distribution. Connecting Sri Lanka to the world." name="description">
+  <meta content="Dimath Group companies, Dimath Cinnamon, Dimath Sports, Dimath Sports Club, Dimath Pharmaceuticals, Filling Stations, Ceylon cinnamon export, sports equipment distribution, fitness centers, pharmaceutical supply, organic spices, Sri Lankan businesses, company portfolio, business ventures, subsidiary companies, group companies" name="keywords">
   <meta content="Dimath Group Companies | Cinnamon, Sports, Pharma, Fitness &amp; Spices in Sri Lanka" property="og:title">
   <meta content="Discover Dimath Group’s ventures across five industries: Ceylon cinnamon export, sporting goods import &amp; distribution, sports &amp; fitness facilities, organic spice export, and pharmaceutical distribution. Connecting Sri Lanka to the world." property="og:description">
   <meta content="https://cdn.prod.website-files.com/68ad40859eb01bffddd9c8af/68c004ffcbd066f1af9fe9ef_Dimath%20group.png" property="og:image">

@@ -101,10 +101,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <meta charset="utf-8" />
   <meta http-equiv="x-ua-compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="NeoMed Pharma - Profile Management" />
-  <meta name="keyword" content="neomed, pharma, profile, admin" />
-  <meta name="author" content="NeoMed Pharma" />
-  <title>Profile | Dimath Sports - Admin Dashboard</title>
+  <meta name="description" content="Dimath Group - Profile Management" />
+  <meta name="keyword" content="dimath group, profile, admin" />
+  <meta name="author" content="Dimath Group" />
+  <title>Profile | Dimath Group - Admin Dashboard</title>
   
   <!-- Favicon -->
   <link href="../images/favicon.png" rel="shortcut icon" type="image/x-icon">
@@ -115,7 +115,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <link rel="stylesheet" href="../dashboard ui/dist/assets/vendors/@flaticon/flaticon-uicons/css/all/all.css">
   <link rel="stylesheet" type="text/css" href="../dashboard ui/dist/assets/css/theme.min.css">
   
-  <!-- NeoMed Custom Dashboard Colors -->
+  <!-- Dimath Group Custom Dashboard Colors -->
   <link rel="stylesheet" href="../css/dashboard-custom.css">
   
   <!-- SweetAlert2 -->

@@ -13,6 +13,7 @@ $page_html = $page_content['content'];
   <meta charset="utf-8">
   <title><?= htmlspecialchars($page_title) ?></title>
   <meta content="Learn about how Dimath Group uses cookies on our website. Our cookie policy explains what cookies we use, why we use them, and how you can manage your cookie preferences." name="description">
+  <meta content="cookies policy, cookie usage, website cookies, cookie preferences, cookie management, cookie consent, web cookies, tracking cookies, session cookies, cookie settings, cookie information, cookie compliance, cookie disclosure" name="keywords">
   <meta content="<?= htmlspecialchars($page_title) ?>" property="og:title">
   <meta content="Learn about how Dimath Group uses cookies on our website. Our cookie policy explains what cookies we use, why we use them, and how you can manage your cookie preferences." property="og:description">
   <meta content="https://cdn.prod.website-files.com/68ad40859eb01bffddd9c8af/68c004ffcbd066f1af9fe9ef_Dimath%20group.png" property="og:image">

@@ -9,6 +9,7 @@ require_once __DIR__ . '/config/company_helper.php';
   <meta charset="utf-8">
   <title>Contact Dimath Group Sri Lanka | Global Exports &amp; Business Partnerships</title>
   <meta content="Connect with Dimath Group for global trade, cinnamon exports, sports distribution, pharma supply, and fitness ventures. Reach us via email, phone, or WhatsApp for partnerships, export inquiries, and B2B opportunities." name="description">
+  <meta content="contact Dimath Group, business inquiries, export inquiries, partnership opportunities, B2B contact, customer support, business development, sales contact, trade inquiries, global business, international trade, business partnerships, supplier contact, export consultation, trade services" name="keywords">
   <meta content="Contact Dimath Group Sri Lanka | Global Exports &amp; Business Partnerships" property="og:title">
   <meta content="Connect with Dimath Group for global trade, cinnamon exports, sports distribution, pharma supply, and fitness ventures. Reach us via email, phone, or WhatsApp for partnerships, export inquiries, and B2B opportunities." property="og:description">
   <meta content="https://cdn.prod.website-files.com/68ad40859eb01bffddd9c8af/68c004ffcbd066f1af9fe9ef_Dimath%20group.png" property="og:image">

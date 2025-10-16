@@ -19,10 +19,10 @@ function getCompanyDetails() {
         } else {
             // Fallback data if JSON file doesn't exist
             $company_details = [
-                'company_name' => 'Dimath Cinnamon',
-                'email' => 'contact@dimathcinnamon.com',
-                'phone' => '+94 769 175 175',
-                'website' => 'https://dimathcinnamon.com',
+                'company_name' => 'Dimath Group',
+                'email' => 'info@dimath.lk',
+                'phone' => '+94 91 226 1887',
+                'website' => 'https://dimath.lk',
                 'address' => [
                     'street' => 'Dimath Sports (Private) Limited',
                     'city' => 'Batapola',
@@ -41,7 +41,7 @@ function getCompanyDetails() {
  */
 function getCompanyEmail() {
     $details = getCompanyDetails();
-    return $details['email'] ?? 'contact@dimathcinnamon.com';
+    return $details['email'] ?? 'info@dimath.lk';
 }
 
 /**
@@ -99,7 +99,7 @@ function getCompanyName() {
  */
 function getCompanyWebsite() {
     $details = getCompanyDetails();
-    return $details['website'] ?? 'https://dimathcinnamon.com';
+    return $details['website'] ?? 'https://dimath.lk';
 }
 
 /**

@@ -1,67 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://localhost/dimath/</loc>
+    <loc>https://dimath.lk/</loc>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://localhost/dimath/about-us</loc>
+    <loc>https://dimath.lk/about-us</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>http://localhost/dimath/our-companies</loc>
+    <loc>https://dimath.lk/our-companies</loc>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://localhost/dimath/contact-us</loc>
+    <loc>https://dimath.lk/contact-us</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>http://localhost/dimath/privacy-policy</loc>
+    <loc>https://dimath.lk/privacy-policy</loc>
     <priority>0.5</priority>
     <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>http://localhost/dimath/terms-of-service</loc>
+    <loc>https://dimath.lk/terms-of-service</loc>
     <priority>0.5</priority>
     <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>http://localhost/dimath/cookies-policy</loc>
+    <loc>https://dimath.lk/cookies-policy</loc>
     <priority>0.5</priority>
     <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>http://localhost/dimath/sitemap</loc>
+    <loc>https://dimath.lk/sitemap</loc>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>http://localhost/dimath/privacy-policy</loc>
-    <lastmod>2025-10-14</lastmod>
-    <priority>0.5</priority>
-    <changefreq>yearly</changefreq>
-  </url>
-  <url>
-    <loc>http://localhost/dimath/cookies-policy</loc>
-    <lastmod>2025-10-14</lastmod>
-    <priority>0.5</priority>
-    <changefreq>yearly</changefreq>
-  </url>
-  <url>
-    <loc>http://localhost/dimath/terms-of-service</loc>
-    <lastmod>2025-10-14</lastmod>
-    <priority>0.5</priority>
-    <changefreq>yearly</changefreq>
-  </url>
-  <url>
-    <loc>http://localhost/dimath/terms-conditions</loc>
-    <lastmod>2025-10-09</lastmod>
-    <priority>0.5</priority>
-    <changefreq>yearly</changefreq>
   </url>
 </urlset>

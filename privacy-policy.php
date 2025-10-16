@@ -12,7 +12,8 @@ $page_html = $page_content['content'];
 <head>
   <meta charset="utf-8">
   <title><?= htmlspecialchars($page_title) ?></title>
-  <meta content="Connect with Dimath Group for global trade, cinnamon exports, sports distribution, pharma supply, and fitness ventures. Reach us via email, phone, or WhatsApp for partnerships, export inquiries, and B2B opportunities." name="description">
+  <meta content="Learn about Dimath Group's privacy policy and how we protect your personal information. Our commitment to data privacy, security measures, and your rights regarding personal data collection and usage." name="description">
+  <meta content="privacy policy, data protection, personal information, privacy rights, data security, GDPR compliance, privacy statement, data collection, information security, user privacy, privacy protection, data handling, privacy practices, confidentiality" name="keywords">
   <meta content="<?= htmlspecialchars($page_title) ?>" property="og:title">
   <meta content="Connect with Dimath Group for global trade, cinnamon exports, sports distribution, pharma supply, and fitness ventures. Reach us via email, phone, or WhatsApp for partnerships, export inquiries, and B2B opportunities." property="og:description">
   <meta content="https://cdn.prod.website-files.com/68ad40859eb01bffddd9c8af/68c004ffcbd066f1af9fe9ef_Dimath%20group.png" property="og:image">

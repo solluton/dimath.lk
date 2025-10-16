@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://dmt.lk/sitemap.xml
+Sitemap: https://dimath.lk/sitemap.xml
 
 # Disallow admin and system areas
 Disallow: /admin/

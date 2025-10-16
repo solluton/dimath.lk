@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Access Denied | DMT Cricket</title>
+    <title>Access Denied | Dimath Group</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -151,7 +151,7 @@
         </div>
         
         <div class="footer">
-            <strong>DMT Cricket</strong> - Dimath Sports (Private) Limited<br>
+            <strong>Dimath Group</strong> - Dimath Sports (Private) Limited<br>
             Error Code: 403 Forbidden
         </div>
     </div>

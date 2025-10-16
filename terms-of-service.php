@@ -13,6 +13,7 @@ $page_html = $page_content['content'];
   <meta charset="utf-8">
   <title><?= htmlspecialchars($page_title) ?></title>
   <meta content="By accessing and using Dimath Group, you agree to comply with our Terms of Service. These terms outline the rules, responsibilities, and conditions for using our website, products, and services. Please read them carefully to understand your rights and obligations while interacting with our platform." name="description">
+  <meta content="terms of service, terms and conditions, user agreement, legal terms, service terms, website terms, user obligations, legal conditions, terms of use, service agreement, legal disclaimer, user rights, terms compliance, legal framework" name="keywords">
   <meta content="<?= htmlspecialchars($page_title) ?>" property="og:title">
   <meta content="By accessing and using Dimath Group, you agree to comply with our Terms of Service. These terms outline the rules, responsibilities, and conditions for using our website, products, and services. Please read them carefully to understand your rights and obligations while interacting with our platform." property="og:description">
   <meta content="https://cdn.prod.website-files.com/68ad40859eb01bffddd9c8af/68c004ffcbd066f1af9fe9ef_Dimath%20group.png" property="og:image">

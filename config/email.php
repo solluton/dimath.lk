@@ -22,8 +22,8 @@ function sendEmail($to, $subject, $message, $is_html = false, $from_email = null
     $smtp_encryption = env('SMTP_ENCRYPTION', 'tls');
     
     // Default from email and name
-    $from_email = $from_email ?: env('FROM_EMAIL', 'contact@dimathcinnamon.com');
-    $from_name = $from_name ?: env('FROM_NAME', 'Dimath Sports');
+    $from_email = $from_email ?: env('FROM_EMAIL', 'info@dimath.lk');
+    $from_name = $from_name ?: env('FROM_NAME', 'Dimath Group');
     
     $mail = new PHPMailer(true);
     
@@ -109,10 +109,10 @@ function sendContactEmailNotification($lead_data) {
         if ($result && !empty($result['setting_value'])) {
             $notification_email = $result['setting_value'];
         } else {
-            $notification_email = 'contact@dimathcinnamon.com'; // Fallback
+            $notification_email = 'info@dimath.lk'; // Fallback
         }
     } catch(PDOException $e) {
-        $notification_email = 'contact@dimathcinnamon.com'; // Fallback on error
+        $notification_email = 'info@dimath.lk'; // Fallback on error
         error_log("Failed to get contact email from settings: " . $e->getMessage());
     }
     
@@ -481,8 +481,8 @@ function getCompanyDetails() {
     // Fallback company details
     return [
         'company_name' => 'Dimath Sports',
-        'website' => 'https://dimathcinnamon.com',
-        'email' => 'contact@dimathcinnamon.com',
+        'website' => 'https://dimath.lk',
+        'email' => 'info@dimath.lk',
         'phone' => '+94 77 123 4567',
         'email_templates' => [
             'auto_reply' => [
@@ -916,12 +916,12 @@ function generateAutoReplyTemplate($lead_data, $company_details) {
 /**
  * Send test email
  */
-function sendTestEmail($to = 'contact@dimathcinnamon.com') {
-    $subject = 'Test Email from Dimath Sports - ' . date('Y-m-d H:i:s');
+function sendTestEmail($to = 'info@dimath.lk') {
+    $subject = 'Test Email from Dimath Group - ' . date('Y-m-d H:i:s');
     
-    $message = "This is a test email from Dimath Sports website using PHPMailer.\n\n";
+    $message = "This is a test email from Dimath Group website using PHPMailer.\n\n";
     $message .= "Test Details:\n";
-    $message .= "- Sent from: " . env('FROM_NAME', 'Dimath Sports') . " <" . env('FROM_EMAIL', 'contact@dimathsports.com') . ">\n";
+    $message .= "- Sent from: " . env('FROM_NAME', 'Dimath Group') . " <" . env('FROM_EMAIL', 'info@dimath.lk') . ">\n";
     $message .= "- SMTP Host: " . env('SMTP_HOST', 'premium5.web-hosting.com') . "\n";
     $message .= "- SMTP Port: " . env('SMTP_PORT', '587') . "\n";
     $message .= "- SMTP Username: " . env('SMTP_USERNAME', 'leads@solluton.com') . "\n";

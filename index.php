@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>Dimath Group Sri Lanka | Cinnamon Exports, Sports Distribution, Pharma &amp; Global Trade</title>
   <meta content="Dimath is a diversified group of companies in Sri Lanka, specializing in Ceylon cinnamon exports, sporting goods distribution, fitness centers, pharmaceutical distribution, and organic spices. Trusted by global buyers in 15+ countries with ethical, high-quality trade solutions." name="description">
+  <meta content="Dimath Group, Sri Lanka, Ceylon cinnamon, cinnamon exports, sports distribution, pharmaceutical distribution, fitness centers, organic spices, global trade, export companies, B2B, international business, Sri Lankan companies, cinnamon suppliers, sports equipment, pharma supply, fitness industry, spice exports, trade partnerships, business solutions, quality products" name="keywords">
   <meta content="Dimath Group Sri Lanka | Cinnamon Exports, Sports Distribution, Pharma &amp; Global Trade" property="og:title">
   <meta content="Dimath is a diversified group of companies in Sri Lanka, specializing in Ceylon cinnamon exports, sporting goods distribution, fitness centers, pharmaceutical distribution, and organic spices. Trusted by global buyers in 15+ countries with ethical, high-quality trade solutions." property="og:description">
   <meta content="https://cdn.prod.website-files.com/68ad40859eb01bffddd9c8af/68c004ffcbd066f1af9fe9ef_Dimath%20group.png" property="og:image">

@@ -14,8 +14,8 @@ try {
 }
 
 // Set page title and meta
-$page_title = "Sitemap - DMT Cricket Sri Lanka";
-$page_description = "Find all pages and products on the DMT Cricket website. Browse our complete sitemap to discover softball cricket gear, bats, balls, and gloves.";
+$page_title = "Sitemap - Dimath Group Sri Lanka";
+$page_description = "Find all pages and services on the Dimath Group website. Browse our complete sitemap to discover our companies, services, and business information.";
 ?>
 <!DOCTYPE html>
 <html data-wf-page="68ac3917626e46cbd1a97b47" data-wf-site="68ac3916626e46cbd1a97ae5">
@@ -66,7 +66,7 @@ a,
           <div class="padding-section-large">
             <div class="margin-bottom margin-large">
               <h1 class="heading-style-h1">Website Sitemap</h1>
-              <p class="text-size-medium">Find all pages and products on the DMT Cricket website. Browse our complete sitemap to discover softball cricket gear, bats, balls, and gloves.</p>
+              <p class="text-size-medium">Find all pages and services on the Dimath Group website. Browse our complete sitemap to discover our companies, services, and business information.</p>
             </div>
             
             <!-- Main Pages -->
@@ -113,7 +113,7 @@ a,
             <div class="margin-bottom margin-large">
               <h2 class="heading-style-h2">Additional Information</h2>
               <div class="sitemap-info">
-                <p class="text-size-medium">This sitemap includes all publicly accessible pages on the DMT Cricket website. For the most up-to-date information about our products and services, please visit our main pages.</p>
+                <p class="text-size-medium">This sitemap includes all publicly accessible pages on the Dimath Group website. For the most up-to-date information about our companies and services, please visit our main pages.</p>
                 <div class="margin-top margin-medium">
                   <a href="/" class="button w-button">Back to Home</a>
                   <a href="/our-products" class="button is-secondary w-button">View All Products</a>

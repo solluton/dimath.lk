@@ -33,9 +33,9 @@ try {
   <meta charset="utf-8" />
   <meta http-equiv="x-ua-compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="NeoMed Pharma - Legal Pages Management" />
-  <meta name="keyword" content="neomed, pharma, legal, pages, admin" />
-  <meta name="author" content="NeoMed Pharma" />
+  <meta name="description" content="Dimath Group - Legal Pages Management" />
+  <meta name="keyword" content="dimath group, legal, pages, admin" />
+  <meta name="author" content="Dimath Group" />
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,7 +54,7 @@ try {
   <link rel="stylesheet" href="../dashboard ui/dist/assets/vendors/@flaticon/flaticon-uicons/css/all/all.css">
   <link rel="stylesheet" type="text/css" href="../dashboard ui/dist/assets/css/theme.min.css">
   
-  <!-- NeoMed Custom Dashboard Colors -->
+  <!-- Dimath Group Custom Dashboard Colors -->
   <link rel="stylesheet" type="text/css" href="../css/dashboard-custom.css">
   
   <!-- SweetAlert2 -->

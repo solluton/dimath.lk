@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>About Dimath Group | Sri Lanka’s Trusted Global Export &amp; Trade Partner</title>
   <meta content="Learn about Dimath Group, a Sri Lankan diversified company built on integrity and quality. With global exports, local distribution, and modern industries in cinnamon, sports, pharma, and fitness, we continue to grow with partners worldwide." name="description">
+  <meta content="about Dimath Group, company history, Sri Lankan business, corporate profile, business values, company mission, leadership team, company culture, business ethics, corporate responsibility, Sri Lanka companies, diversified business, company overview, business philosophy, corporate information" name="keywords">
   <meta content="About Dimath Group | Sri Lanka’s Trusted Global Export &amp; Trade Partner" property="og:title">
   <meta content="Learn about Dimath Group, a Sri Lankan diversified company built on integrity and quality. With global exports, local distribution, and modern industries in cinnamon, sports, pharma, and fitness, we continue to grow with partners worldwide." property="og:description">
   <meta content="https://cdn.prod.website-files.com/68ad40859eb01bffddd9c8af/68c004ffcbd066f1af9fe9ef_Dimath%20group.png" property="og:image">

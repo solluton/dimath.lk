@@ -17,15 +17,20 @@ if (php_sapi_name() !== 'cli') {
 }
 
 try {
-    $pdo = getDBConnection();
-    
-    // Fetch all legal pages from database
-    $stmt = $pdo->prepare("SELECT page_type, updated_at FROM legal_pages ORDER BY updated_at DESC");
-    $stmt->execute();
-    $legal_pages = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    
-    // Get base URL (set SITE_URL=dimathgroup.lk in .env for live)
+    // Get base URL (set SITE_URL=dimath.lk in .env for live)
     $base_url = getBaseUrl();
+    
+    // Try to fetch legal pages from database if table exists
+    $legal_pages = [];
+    try {
+        $pdo = getDBConnection();
+        $stmt = $pdo->prepare("SELECT page_type, updated_at FROM legal_pages ORDER BY updated_at DESC");
+        $stmt->execute();
+        $legal_pages = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (Exception $e) {
+        // Legal pages table doesn't exist, continue with static pages only
+        echo "Note: Legal pages table not found, using static pages only.\n";
+    }
     
     // Generate XML content
     $xml_content = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";

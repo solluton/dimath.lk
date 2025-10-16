@@ -84,7 +84,7 @@ try {
   <link rel="stylesheet" href="../dashboard ui/dist/assets/vendors/@flaticon/flaticon-uicons/css/all/all.css">
   <link rel="stylesheet" type="text/css" href="../dashboard ui/dist/assets/css/theme.min.css">
   
-  <!-- NeoMed Custom Dashboard Colors -->
+  <!-- Dimath Group Custom Dashboard Colors -->
   <link rel="stylesheet" type="text/css" href="../css/dashboard-custom.css">
   
   <!-- SweetAlert2 -->
