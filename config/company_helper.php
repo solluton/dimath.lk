@@ -62,6 +62,23 @@ function getCompanyPhoneHref() {
 }
 
 /**
+ * Get company WhatsApp number
+ */
+function getCompanyWhatsApp() {
+    $details = getCompanyDetails();
+    return $details['whatsapp'] ?? '+94 76 426 0260';
+}
+
+/**
+ * Get company WhatsApp number for href (whatsapp: link)
+ */
+function getCompanyWhatsAppHref() {
+    $whatsapp = getCompanyWhatsApp();
+    // Remove spaces and add whatsapp: prefix
+    return 'whatsapp:' . str_replace(' ', '', $whatsapp);
+}
+
+/**
  * Get company email for href (mailto: link)
  */
 function getCompanyEmailHref() {
@@ -92,10 +109,15 @@ function getCompanyAddress() {
     $details = getCompanyDetails();
     $address = $details['address'] ?? [];
     
+    // Use full_address if available, otherwise build from parts
+    if (!empty($address['full_address'])) {
+        return $address['full_address'];
+    }
+    
     $parts = [];
     if (!empty($address['street'])) $parts[] = $address['street'];
-    if (!empty($address['city'])) $parts[] = $address['city'];
-    if (!empty($address['postal_code'])) $parts[] = $address['postal_code'];
+    if (!empty($address['area'])) $parts[] = $address['area'];
+    if (!empty($address['province'])) $parts[] = $address['province'];
     if (!empty($address['country'])) $parts[] = $address['country'];
     
     return implode(', ', $parts);

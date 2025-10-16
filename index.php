@@ -303,7 +303,7 @@ include 'includes/navbar-global.php';
                   <div class="header108_image-wrapper"><img sizes="100vw" srcset="images/dimath-group-sri-lanka-business.jpg-12_1dimath-group-sri-lanka-business.jpg-12.avif 500w, images/dimath-group-sri-lanka-business.jpg-12_1dimath-group-sri-lanka-business.jpg-12.avif 800w, images/dimath-group-sri-lanka-business.jpg-12_1.avif 1742w" alt="" src="images/dimath-group-sri-lanka-business.jpg-12_1.avif" loading="eager" class="header108_image3"></div>
                 </div>
               </div>
-              <div class="header108_image-wrapper is-image-large"><img sizes="100vw" srcset="images/dimath-group-sri-lanka-business.jpg-6_1dimath-group-sri-lanka-business.jpg-6.avif 500w, images/dimath-group-sri-lanka-business.jpg-6_1dimath-group-sri-lanka-business.jpg-6.avif 800w, images/dimath-group-sri-lanka-business.jpg-6_1.avif 1714w" alt="" src="images/dimath-group-sri-lanka-business.jpg-6_1.avif" loading="eager" class="header108_image4"></div>
+              <div class="header108_image-wrapper is-image-large"><img sizes="100vw" srcset="images/dimath-family.webp 500w, images/dimath-family.webp 800w, images/dimath-family.webp 1714w" alt="" src="images/dimath-family.webp" loading="eager" class="header108_image4"></div>
               <div id="w-node-_9cac002e-d548-72d8-cf87-06ef6adfc1be-ddd9c8fc" class="header108_image-group-right">
                 <div id="w-node-_9cac002e-d548-72d8-cf87-06ef6adfc1bf-ddd9c8fc" class="header108_small-image-group">
                   <div class="header108_image-wrapper"><img sizes="100vw" srcset="images/dimath-group-sri-lanka-business.jpg-9_1dimath-group-sri-lanka-business.jpg-9.avif 500w, images/dimath-group-sri-lanka-business.jpg-9_1dimath-group-sri-lanka-business.jpg-9.avif 800w, images/dimath-group-sri-lanka-business.jpg-9_1.avif 1742w" alt="" src="images/dimath-group-sri-lanka-business.jpg-9_1.avif" loading="eager" class="header108_image5"></div>
@@ -632,33 +632,7 @@ include 'includes/navbar-global.php';
           </div>
         </div>
       </section>
-      <section class="section_cta39 color-scheme-3">
-        <div class="padding-global">
-          <div class="container-large">
-            <div class="padding-section-large">
-              <div data-w-id="99700eb4-2ede-6f63-b432-797cde7e2f84" class="cta39_component">
-                <div class="w-layout-grid cta39_card">
-                  <div class="cta39_card-content">
-                    <div class="cta39_card-content-top">
-                      <div class="margin-bottom margin-small">
-                        <h2 class="heading-style-h2">Let&#x27;s Build the Future Together</h2>
-                      </div>
-                      <p class="text-size-medium">Whether you are a potential partner, customer, or investor, we welcome you to explore opportunities with the Dimath Group. Together, we can create sustainable value and long-term success.</p>
-                    </div>
-                    <div class="margin-top margin-medium">
-                      <div class="button-group">
-                        <a href="<?php echo url('contact-us'); ?>" class="button w-button">Contact Us Today</a>
-                        <a href="<?php echo getCompanyPhoneHref(); ?>" class="button is-secondary w-button">Call Now</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="cta39_image-wrapper"><img sizes="(max-width: 2657px) 100vw, 2657px" srcset="images/dimath-group-sri-lanka-business.jpg-7_2dimath-group-sri-lanka-business.jpg-7.avif 500w, images/dimath-group-sri-lanka-business.jpg-7_2dimath-group-sri-lanka-business.jpg-7.avif 800w, images/dimath-group-sri-lanka-business.jpg-7_2dimath-group-sri-lanka-business.jpg-7.avif 1080w, images/dimath-group-sri-lanka-business.jpg-7_2.avif 2657w" alt="" src="images/dimath-group-sri-lanka-business.jpg-7_2.avif" loading="eager" class="cta39_image"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <?php include 'includes/cta-section.php'; ?>
     </main>
     <?php include 'includes/footer-global.php'; ?>
   </div>

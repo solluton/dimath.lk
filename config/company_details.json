@@ -1,13 +1,15 @@
 {
-  "company_name": "Dimath Group",
-  "website": "https://dimathgroup.lk",
-  "email": "info@dimathgroup.lk",
-  "phone": "+94 91 226 1888",
+  "company_name": "Head Office – Dimath Group",
+  "website": "https://dimath.lk",
+  "email": "info@dimath.lk",
+  "phone": "+94 91 226 1887",
+  "whatsapp": "+94 76 426 0260",
   "address": {
-    "street": "Suhada Mawatha, Sadamulla",
-    "city": "Batapola",
-    "postal_code": "80320",
-    "country": "Sri Lanka"
+    "street": "Suhada Mawatha",
+    "area": "Sadamulla, Batapola",
+    "province": "Southern Province",
+    "country": "Sri Lanka",
+    "full_address": "Suhada Mawatha, Sadamulla, Batapola, Southern Province, Sri Lanka"
   },
   "business_hours": {
     "monday_friday": "9:00 AM - 5:00 PM",

@@ -32,8 +32,8 @@ if (preg_match('#^/(.+)\.html$#', $path, $m)) {
         'index' => '/',
         'about' => '/about',
         'contact' => '/contact',
-        'our-products' => '/our-products',
-        'product' => '/our-products',
+        'our-products' => '/our-companies',
+        'product' => '/our-companies',
         'process' => '/our-process',
         'privacy-policy' => '/privacy-policy',
         'terms-of-service' => '/terms-of-service',
@@ -102,7 +102,7 @@ if ($path === '/cookies-policy' || $path === '/cookies-policy/') {
 }
 
 if ($path === '/products' || $path === '/products/') {
-    include 'our-products.php';
+    include 'our-companies.php';
     exit;
 }
 
