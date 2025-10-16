@@ -6,6 +6,66 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.bootstrap5.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.bootstrap5.min.css">
 
+<!-- Custom CSS for Admin Panel -->
+<style>
+/* SweetAlert2 Green Button Text - Make White */
+.swal2-styled.swal2-confirm {
+  color: white !important;
+}
+
+/* Ensure all green buttons have white text */
+.swal2-confirm[style*="background-color: #28a745"],
+.swal2-confirm[style*="background-color: rgb(40, 167, 69)"],
+button[style*="background-color: #28a745"],
+button[style*="background-color: rgb(40, 167, 69)"] {
+  color: white !important;
+}
+
+/* Override any inline styles for green buttons */
+.swal2-confirm {
+  color: white !important;
+}
+
+/* Additional specificity for SweetAlert2 */
+.swal2-popup .swal2-styled.swal2-confirm {
+  color: white !important;
+}
+
+/* Force white text on all confirm buttons */
+button.swal2-confirm {
+  color: white !important;
+}
+</style>
+
+<!-- JavaScript to ensure white text on SweetAlert2 buttons -->
+<script>
+// Override SweetAlert2 button text color after rendering
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to set white text on confirm buttons
+    function setWhiteTextOnConfirmButtons() {
+        const confirmButtons = document.querySelectorAll('.swal2-confirm');
+        confirmButtons.forEach(button => {
+            button.style.color = 'white !important';
+        });
+    }
+    
+    // Set white text on page load
+    setWhiteTextOnConfirmButtons();
+    
+    // Override SweetAlert2's confirm button creation
+    if (typeof Swal !== 'undefined') {
+        const originalFire = Swal.fire;
+        Swal.fire = function(...args) {
+            return originalFire.apply(this, args).then((result) => {
+                // Set white text after SweetAlert2 renders
+                setTimeout(setWhiteTextOnConfirmButtons, 100);
+                return result;
+            });
+        };
+    }
+});
+</script>
+
 <!-- DataTables JS -->
 <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>

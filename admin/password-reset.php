@@ -79,10 +79,10 @@ $csrf_token = generateCSRFToken();
   <meta charset="utf-8" />
   <meta http-equiv="x-ua-compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Dimath Sports - Password Reset" />
-  <meta name="keyword" content="dimath, cinnamon, password, reset, admin" />
-  <meta name="author" content="Dimath Sports" />
-  <title>Password Reset | Dimath Sports - Admin Dashboard</title>
+  <meta name="description" content="Dimath Group - Password Reset" />
+  <meta name="keyword" content="dimath, group, password, reset, admin" />
+  <meta name="author" content="Dimath Group" />
+  <title>Password Reset | Dimath Group - Admin Dashboard</title>
   
   <!-- Favicon -->
   <link href="<?php echo asset('images/favicon.png'); ?>" rel="shortcut icon" type="image/x-icon">

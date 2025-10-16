@@ -100,25 +100,7 @@ function initializeDatabase() {
         
         $pdo->exec($sql);
 
-        // Attempt to add/align columns used by the new admin/UI
-        try { $pdo->exec("ALTER TABLE products ADD COLUMN key_features TEXT NULL"); } catch (PDOException $e) {}
-        try { $pdo->exec("ALTER TABLE products ADD COLUMN image_1 VARCHAR(255) NULL"); } catch (PDOException $e) {}
-        try { $pdo->exec("ALTER TABLE products ADD COLUMN image_2 VARCHAR(255) NULL"); } catch (PDOException $e) {}
-        try { $pdo->exec("ALTER TABLE products ADD COLUMN image_3 VARCHAR(255) NULL"); } catch (PDOException $e) {}
-        try { $pdo->exec("ALTER TABLE products ADD COLUMN image_4 VARCHAR(255) NULL"); } catch (PDOException $e) {}
-        try { $pdo->exec("ALTER TABLE products ADD COLUMN image_5 VARCHAR(255) NULL"); } catch (PDOException $e) {}
-        try { $pdo->exec("ALTER TABLE products ADD COLUMN image_6 VARCHAR(255) NULL"); } catch (PDOException $e) {}
-        try { $pdo->exec("ALTER TABLE products ADD COLUMN featured_home_image VARCHAR(255) NULL"); } catch (PDOException $e) {}
-        try { $pdo->exec("ALTER TABLE products ADD COLUMN enable_featured_home TINYINT(1) NOT NULL DEFAULT 0"); } catch (PDOException $e) {}
-        try { $pdo->exec("ALTER TABLE products ADD COLUMN deleted_at TIMESTAMP NULL DEFAULT NULL"); } catch (PDOException $e) {}
-        // New single product fields
-        try { $pdo->exec("ALTER TABLE products ADD COLUMN category VARCHAR(100) NULL"); } catch (PDOException $e) {}
-        try { $pdo->exec("ALTER TABLE products ADD COLUMN rating_score DECIMAL(3,2) NULL DEFAULT 0.00"); } catch (PDOException $e) {}
-        try { $pdo->exec("ALTER TABLE products ADD COLUMN reviews_count INT NULL DEFAULT 0"); } catch (PDOException $e) {}
-        try { $pdo->exec("ALTER TABLE products ADD COLUMN show_reviews TINYINT(1) NOT NULL DEFAULT 1"); } catch (PDOException $e) {}
-        try { $pdo->exec("ALTER TABLE products ADD COLUMN details TEXT NULL"); } catch (PDOException $e) {}
-        // Ensure slug is unique (ignore if already exists)
-        try { $pdo->exec("CREATE UNIQUE INDEX idx_products_slug ON products(slug)"); } catch (PDOException $e) {}
+        // Product management removed - no product table modifications needed
         
         // Create/upgrade contact leads table to align with admin panel usage
         $sql = "CREATE TABLE IF NOT EXISTS contact_leads (
@@ -154,72 +136,7 @@ function initializeDatabase() {
         try { $pdo->exec("ALTER TABLE contact_leads ADD COLUMN terms_accepted TINYINT(1) DEFAULT 0"); } catch (PDOException $e) {}
         try { $pdo->exec("ALTER TABLE contact_leads ADD COLUMN deleted_at TIMESTAMP NULL DEFAULT NULL"); } catch (PDOException $e) {}
         
-        // Create products table
-        $sql = "CREATE TABLE IF NOT EXISTS products (
-            id INT AUTO_INCREMENT PRIMARY KEY,
-            title VARCHAR(255) NOT NULL,
-            subtitle VARCHAR(255) NULL,
-            description TEXT NOT NULL,
-            tagline VARCHAR(500) NULL,
-            main_image VARCHAR(255) NULL,
-            gallery_images TEXT NULL,
-            features_section_title VARCHAR(255) NULL,
-            features_section_subtitle VARCHAR(255) NULL,
-            meta_title VARCHAR(255) NULL,
-            meta_description TEXT NULL,
-            slug VARCHAR(191) UNIQUE NULL,
-            status ENUM('active', 'inactive') DEFAULT 'active',
-            display_order INT DEFAULT 0,
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-            updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-        )";
-        
-        $pdo->exec($sql);
-        
-        // Create product_features table for the 'Why Choose' section
-        $sql = "CREATE TABLE IF NOT EXISTS product_features (
-            id INT AUTO_INCREMENT PRIMARY KEY,
-            product_id INT NOT NULL,
-            title VARCHAR(255) NOT NULL,
-            description TEXT NOT NULL,
-            icon VARCHAR(255) NULL,
-            display_order INT DEFAULT 0,
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-            updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-            FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
-        )";
-        
-        $pdo->exec($sql);
-
-        // Create product_categories table
-        $sql = "CREATE TABLE IF NOT EXISTS product_categories (
-            id INT AUTO_INCREMENT PRIMARY KEY,
-            name VARCHAR(150) NOT NULL,
-            slug VARCHAR(191) UNIQUE NOT NULL,
-            description TEXT NULL,
-            status ENUM('active','inactive') DEFAULT 'active',
-            display_order INT DEFAULT 0,
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-            updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-        )";
-        $pdo->exec($sql);
-        // Attempt to add columns/indexes if table already exists (safe-guards)
-        try { $pdo->exec("ALTER TABLE product_categories ADD COLUMN description TEXT NULL"); } catch (PDOException $e) {}
-        try { $pdo->exec("ALTER TABLE product_categories ADD COLUMN status ENUM('active','inactive') DEFAULT 'active'"); } catch (PDOException $e) {}
-        try { $pdo->exec("ALTER TABLE product_categories ADD COLUMN display_order INT DEFAULT 0"); } catch (PDOException $e) {}
-        try { $pdo->exec("CREATE UNIQUE INDEX idx_product_categories_slug ON product_categories(slug)"); } catch (PDOException $e) {}
-
-        // Add or upgrade product columns (safe-guards if table exists already)
-        try { $pdo->exec("ALTER TABLE products ADD COLUMN subtitle VARCHAR(255) NULL"); } catch (PDOException $e) {}
-        try { $pdo->exec("ALTER TABLE products ADD COLUMN tagline VARCHAR(500) NULL"); } catch (PDOException $e) {}
-        try { $pdo->exec("ALTER TABLE products ADD COLUMN gallery_images TEXT NULL"); } catch (PDOException $e) {}
-        try { $pdo->exec("ALTER TABLE products ADD COLUMN features_section_title VARCHAR(255) NULL"); } catch (PDOException $e) {}
-        try { $pdo->exec("ALTER TABLE products ADD COLUMN features_section_subtitle VARCHAR(255) NULL"); } catch (PDOException $e) {}
-        try { $pdo->exec("ALTER TABLE products ADD COLUMN featured_home_image VARCHAR(255) NULL"); } catch (PDOException $e) {}
-        try { $pdo->exec("ALTER TABLE products ADD COLUMN enable_featured_slider TINYINT(1) NOT NULL DEFAULT 0"); } catch (PDOException $e) {}
-        // Add category_id to products (optional link to categories)
-        try { $pdo->exec("ALTER TABLE products ADD COLUMN category_id INT NULL"); } catch (PDOException $e) {}
-        try { $pdo->exec("ALTER TABLE products ADD CONSTRAINT fk_products_category FOREIGN KEY (category_id) REFERENCES product_categories(id) ON SET NULL ON DELETE SET NULL"); } catch (PDOException $e) {}
+        // Product management removed - no product tables needed
         
         // Check if admin user exists (no hardcoded credentials)
         $stmt = $pdo->prepare("SELECT COUNT(*) FROM users WHERE role = 'admin'");

@@ -42,14 +42,13 @@ $current_page = basename($_SERVER['PHP_SELF']);
       <li class="nav-label mb-2 mt-4 px-6 fs-11 fw-semibold text-muted text-uppercase" style="letter-spacing: 1px">
         System
       </li>
-      <li class="<?= (in_array($current_page, ['settings.php', 'slug-redirects.php', 'legal-pages.php', 'custom-scripts.php'])) ? 'mm-active' : '' ?>">
+      <li class="<?= (in_array($current_page, ['settings.php', 'legal-pages.php', 'custom-scripts.php'])) ? 'mm-active' : '' ?>">
         <a class="has-arrow" href="javascript:void(0);">
           <i class="fi fi-rr-settings"></i>
           <span class="mm-text">Settings</span>
         </a>
         <ul>
           <li><a class="sub-menu <?= ($current_page == 'settings.php') ? 'mm-active' : '' ?>" href="/admin/settings">General Settings</a></li>
-          <li><a class="sub-menu <?= ($current_page == 'slug-redirects.php') ? 'mm-active' : '' ?>" href="/admin/slug-redirects">URL Redirects</a></li>
           <li><a class="sub-menu <?= ($current_page == 'legal-pages.php') ? 'mm-active' : '' ?>" href="/admin/legal-pages">Legal Pages</a></li>
           <li><a class="sub-menu <?= ($current_page == 'custom-scripts.php') ? 'mm-active' : '' ?>" href="/admin/custom-scripts">Custom Scripts</a></li>
         </ul>

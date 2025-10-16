@@ -50,6 +50,6 @@ function loadEnv() {
 if (!getenv('SITE_URL') && !isset($_SERVER['HTTP_HOST'])) {
     // Ensure getBaseUrl() has a domain to use in CLI contexts
     if (!defined('DEFAULT_SITE_URL')) {
-        define('DEFAULT_SITE_URL', 'dimathsports.lk');
+        define('DEFAULT_SITE_URL', 'dimath.lk');
     }
 }

@@ -1,59 +1,84 @@
 <?php
 /**
- * Generate Dynamic Sitemap XML
- * This script generates a fresh sitemap.xml file with current product data
+ * Generate Sitemap XML for Dimath Group Website
+ * This script generates a sitemap.xml file with all static pages and legal pages
+ * ADMIN ONLY - Requires authentication
  */
 
 require_once 'config/database.php';
 require_once 'config/url_helper.php';
 
+// ADMIN ONLY ACCESS - Command line execution only
+if (php_sapi_name() !== 'cli') {
+    // Block all web access
+    http_response_code(403);
+    header('Content-Type: text/plain');
+    die('Access denied. This script can only be run from command line by administrators.');
+}
+
 try {
     $pdo = getDBConnection();
     
-    // Fetch all active products
-    $stmt = $pdo->prepare("SELECT title, slug, updated_at FROM products WHERE status = 'active' ORDER BY display_order ASC, created_at ASC");
+    // Fetch all legal pages from database
+    $stmt = $pdo->prepare("SELECT page_type, updated_at FROM legal_pages ORDER BY updated_at DESC");
     $stmt->execute();
-    $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $legal_pages = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
-    // Get base URL (set SITE_URL=dimathsports.lk in .env for live)
+    // Get base URL (set SITE_URL=dimathgroup.lk in .env for live)
     $base_url = getBaseUrl();
     
-    // Start XML output
-    header('Content-Type: application/xml; charset=utf-8');
-    echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
-    echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
+    // Generate XML content
+    $xml_content = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
+    $xml_content .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
     
-    // Static pages (clean routes)
+    // Static pages for Dimath Group website
     $static_pages = [
         ['url' => '', 'priority' => '1.0', 'changefreq' => 'weekly'],
-        ['url' => 'about', 'priority' => '0.8', 'changefreq' => 'monthly'],
-        ['url' => 'our-products', 'priority' => '0.9', 'changefreq' => 'weekly'],
-        ['url' => 'contact', 'priority' => '0.7', 'changefreq' => 'monthly'],
+        ['url' => 'about-us', 'priority' => '0.8', 'changefreq' => 'monthly'],
+        ['url' => 'our-companies', 'priority' => '0.9', 'changefreq' => 'weekly'],
+        ['url' => 'contact-us', 'priority' => '0.7', 'changefreq' => 'monthly'],
         ['url' => 'privacy-policy', 'priority' => '0.5', 'changefreq' => 'yearly'],
         ['url' => 'terms-of-service', 'priority' => '0.5', 'changefreq' => 'yearly'],
         ['url' => 'cookies-policy', 'priority' => '0.5', 'changefreq' => 'yearly'],
         ['url' => 'sitemap', 'priority' => '0.6', 'changefreq' => 'monthly']
     ];
     
+    $url_count = 0;
+    
+    // Add static pages
     foreach ($static_pages as $page) {
-        echo "  <url>\n";
-        echo "    <loc>" . htmlspecialchars(rtrim($base_url, '/') . '/' . ltrim($page['url'], '/')) . "</loc>\n";
-        echo "    <priority>" . $page['priority'] . "</priority>\n";
-        echo "    <changefreq>" . $page['changefreq'] . "</changefreq>\n";
-        echo "  </url>\n";
+        $xml_content .= "  <url>\n";
+        $xml_content .= "    <loc>" . htmlspecialchars(rtrim($base_url, '/') . '/' . ltrim($page['url'], '/')) . "</loc>\n";
+        $xml_content .= "    <priority>" . $page['priority'] . "</priority>\n";
+        $xml_content .= "    <changefreq>" . $page['changefreq'] . "</changefreq>\n";
+        $xml_content .= "  </url>\n";
+        $url_count++;
     }
     
-    // Product pages
-    foreach ($products as $product) {
-        echo "  <url>\n";
-        echo "    <loc>" . htmlspecialchars(rtrim($base_url, '/') . '/product/' . $product['slug']) . "</loc>\n";
-        echo "    <lastmod>" . date('Y-m-d', strtotime($product['updated_at'])) . "</lastmod>\n";
-        echo "    <priority>0.8</priority>\n";
-        echo "    <changefreq>weekly</changefreq>\n";
-        echo "  </url>\n";
+    // Add legal pages from database
+    foreach ($legal_pages as $page) {
+        $xml_content .= "  <url>\n";
+        $xml_content .= "    <loc>" . htmlspecialchars(rtrim($base_url, '/') . '/' . $page['page_type']) . "</loc>\n";
+        $xml_content .= "    <lastmod>" . date('Y-m-d', strtotime($page['updated_at'])) . "</lastmod>\n";
+        $xml_content .= "    <priority>0.5</priority>\n";
+        $xml_content .= "    <changefreq>yearly</changefreq>\n";
+        $xml_content .= "  </url>\n";
+        $url_count++;
     }
     
-    echo '</urlset>' . "\n";
+    $xml_content .= '</urlset>' . "\n";
+    
+    // Write to sitemap.xml file
+    $sitemap_file = __DIR__ . '/sitemap.xml';
+    $result = file_put_contents($sitemap_file, $xml_content, LOCK_EX);
+    
+    if ($result !== false) {
+        // Set proper permissions
+        chmod($sitemap_file, 0644);
+        echo "Sitemap generated successfully with $url_count URLs\n";
+    } else {
+        throw new Exception("Failed to write sitemap.xml file");
+    }
     
 } catch (Exception $e) {
     // Fallback to static sitemap if database fails

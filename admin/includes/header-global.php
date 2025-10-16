@@ -34,6 +34,46 @@ $path_prefix = $is_admin_page ? '../' : '';
   background-color: #f8f9fa;
   color: #212529;
 }
+
+/* SweetAlert2 Green Button Text - Make White */
+.swal2-styled.swal2-confirm {
+  color: white !important;
+}
+
+/* Ensure all green buttons have white text */
+.swal2-confirm[style*="background-color: #28a745"],
+.swal2-confirm[style*="background-color: rgb(40, 167, 69)"],
+button[style*="background-color: #28a745"],
+button[style*="background-color: rgb(40, 167, 69)"] {
+  color: white !important;
+}
+
+/* Override any inline styles for green buttons */
+.swal2-confirm {
+  color: white !important;
+}
+
+/* Fix alert message overflow issues */
+.alert {
+  margin-bottom: 1rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+/* Ensure alerts stay within container */
+.edash-page-container .alert {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Responsive alert text */
+@media (max-width: 768px) {
+  .alert {
+    font-size: 0.875rem;
+    padding: 0.75rem;
+  }
+}
 </style>
 
 <!-- Header -->

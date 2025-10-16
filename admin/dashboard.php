@@ -101,19 +101,21 @@ try {
         </div>
 
         <!-- Error/Success Messages -->
-        <?php if ($error): ?>
-          <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <strong>Error!</strong> <?php echo htmlspecialchars($error); ?>
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-          </div>
-        <?php endif; ?>
+        <div class="px-4">
+          <?php if ($error): ?>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <strong>Error!</strong> <?php echo htmlspecialchars($error); ?>
+              <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+          <?php endif; ?>
 
-        <?php if ($message): ?>
-          <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>Success!</strong> <?php echo htmlspecialchars($message); ?>
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-          </div>
-        <?php endif; ?>
+          <?php if ($message): ?>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <strong>Success!</strong> <?php echo htmlspecialchars($message); ?>
+              <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+          <?php endif; ?>
+        </div>
 
         <!-- Content Section -->
         <div class="edash-content-section row g-3 g-md-4 px-4">

@@ -179,19 +179,21 @@ try {
         </div>
         
         <!-- Messages -->
-        <?php if ($message): ?>
-          <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <i class="fi fi-rr-check me-2"></i><?php echo htmlspecialchars($message); ?>
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-          </div>
-        <?php endif; ?>
-        
-        <?php if ($error): ?>
-          <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <i class="fi fi-rr-exclamation me-2"></i><?php echo htmlspecialchars($error); ?>
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-          </div>
-        <?php endif; ?>
+        <div class="px-4">
+          <?php if ($message): ?>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <i class="fi fi-rr-check me-2"></i><?php echo htmlspecialchars($message); ?>
+              <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+          <?php endif; ?>
+          
+          <?php if ($error): ?>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <i class="fi fi-rr-exclamation me-2"></i><?php echo htmlspecialchars($error); ?>
+              <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+          <?php endif; ?>
+        </div>
         
         <!-- Contact Leads Table -->
         <div class="card mx-4">
