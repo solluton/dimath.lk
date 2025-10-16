@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', function() {
             border: 1px solid #dee2e6 !important;
             border-radius: 0.375rem !important;
             background: white !important;
-            color: #f70 !important;
+            color: #28a745 !important;
             text-decoration: none !important;
             display: inline-block !important;
             line-height: 1.5 !important;
@@ -211,11 +211,11 @@ document.addEventListener('DOMContentLoaded', function() {
         .dataTables_wrapper .dataTables_paginate .paginate_button.current:focus,
         .dataTables_wrapper .dataTables_paginate .current,
         .dataTables_wrapper .dataTables_paginate .current:hover {
-            background-color: #f70 !important;
-            background: #f70 !important;
+            background-color: #28a745 !important;
+            background: #28a745 !important;
             color: white !important;
-            border-color: #f70 !important;
-            border: 1px solid #f70 !important;
+            border-color: #28a745 !important;
+            border: 1px solid #28a745 !important;
         }
         
         /* Ensure text inside active buttons is white */
@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .dataTables_wrapper .dataTables_paginate .paginate_button:hover:not(.current) {
             background: #e9ecef !important;
             border-color: #adb5bd !important;
-            color: #f70 !important;
+            color: #28a745 !important;
         }
         
         .dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
@@ -283,8 +283,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         /* Improve action button hover states for better contrast */
         .dataTables_wrapper .btn-outline-primary:hover {
-            background-color: #f70 !important;
-            border-color: #f70 !important;
+            background-color: #28a745 !important;
+            border-color: #28a745 !important;
             color: white !important;
         }
         
@@ -334,16 +334,16 @@ document.addEventListener('DOMContentLoaded', function() {
         .dataTables_wrapper .dataTables_paginate .pagination .page-item.active .page-link,
         .dataTables_wrapper .dataTables_paginate .pagination .active,
         .dataTables_wrapper .dataTables_paginate span.current {
-            background-color: #f70 !important;
+            background-color: #28a745 !important;
             color: white !important;
-            border-color: #f70 !important;
+            border-color: #28a745 !important;
         }
         
         /* Force active state on all possible elements */
         .dataTables_wrapper .dataTables_paginate [aria-current="page"] {
-            background-color: #f70 !important;
+            background-color: #28a745 !important;
             color: white !important;
-            border-color: #f70 !important;
+            border-color: #28a745 !important;
         }
         
         /* Fix overflow issues in modals and containers */

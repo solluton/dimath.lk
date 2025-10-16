@@ -120,7 +120,7 @@ function initializeDatabase() {
         // Ensure slug is unique (ignore if already exists)
         try { $pdo->exec("CREATE UNIQUE INDEX idx_products_slug ON products(slug)"); } catch (PDOException $e) {}
         
-        // Create/upgrade contact leads table to new schema (supports first/last name)
+        // Create/upgrade contact leads table to align with admin panel usage
         $sql = "CREATE TABLE IF NOT EXISTS contact_leads (
             id INT AUTO_INCREMENT PRIMARY KEY,
             name VARCHAR(150) NOT NULL,
@@ -131,11 +131,15 @@ function initializeDatabase() {
             company VARCHAR(150) NULL,
             subject VARCHAR(191) NULL,
             message TEXT NOT NULL,
+            terms_accepted TINYINT(1) DEFAULT 0,
             status ENUM('new', 'read', 'replied', 'closed') DEFAULT 'new',
             ip_address VARCHAR(45) NULL,
             user_agent TEXT NULL,
+            deleted_at TIMESTAMP NULL DEFAULT NULL,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-            updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+            updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+            INDEX idx_contact_email_created_at (email, created_at),
+            INDEX idx_contact_status_created_at (status, created_at)
         )";
         
         $pdo->exec($sql);
@@ -147,8 +151,8 @@ function initializeDatabase() {
         try { $pdo->exec("ALTER TABLE contact_leads MODIFY COLUMN phone VARCHAR(50) NULL"); } catch (PDOException $e) {}
         try { $pdo->exec("ALTER TABLE contact_leads ADD COLUMN company VARCHAR(150) NULL"); } catch (PDOException $e) {}
         try { $pdo->exec("ALTER TABLE contact_leads ADD COLUMN subject VARCHAR(191) NULL"); } catch (PDOException $e) {}
-        // Remove legacy terms_accept column if present (no longer needed)
-        try { $pdo->exec("ALTER TABLE contact_leads DROP COLUMN terms_accept"); } catch (PDOException $e) {}
+        try { $pdo->exec("ALTER TABLE contact_leads ADD COLUMN terms_accepted TINYINT(1) DEFAULT 0"); } catch (PDOException $e) {}
+        try { $pdo->exec("ALTER TABLE contact_leads ADD COLUMN deleted_at TIMESTAMP NULL DEFAULT NULL"); } catch (PDOException $e) {}
         
         // Create products table
         $sql = "CREATE TABLE IF NOT EXISTS products (

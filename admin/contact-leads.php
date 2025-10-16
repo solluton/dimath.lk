@@ -169,7 +169,7 @@ try {
                     <i class="fi fi-rr-arrow-left me-2"></i>Back to Leads
                   </a>
                 <?php else: ?>
-                  <a href="?view=trash" class="btn btn-outline-secondary">
+                  <a href="?view=trash" class="btn btn-outline-primary">
                     <i class="fi fi-rr-trash me-2"></i>View Trash
                   </a>
                 <?php endif; ?>
@@ -396,7 +396,7 @@ try {
             text: `Are you sure you want to move the lead from "${leadName}" (${leadEmail}) to trash?`,
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#f70',
+            confirmButtonColor: '#28a745',
             cancelButtonColor: '#3085d6',
             confirmButtonText: 'Yes, move to trash!',
             cancelButtonText: 'Cancel'
@@ -422,7 +422,7 @@ try {
             text: `Are you sure you want to permanently delete the lead from "${leadName}" (${leadEmail})? This action cannot be undone!`,
             icon: 'error',
             showCancelButton: true,
-            confirmButtonColor: '#f70',
+            confirmButtonColor: '#28a745',
             cancelButtonColor: '#3085d6',
             confirmButtonText: 'Yes, delete permanently!',
             cancelButtonText: 'Cancel'

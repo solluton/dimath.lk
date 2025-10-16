@@ -79,7 +79,7 @@ try {
   <link href="../images/webclip.png" rel="apple-touch-icon">
   
   <!-- Title -->
-  <title>Settings | Dimath Sports - Admin Dashboard</title>
+  <title>Settings | Dimath Group - Admin Dashboard</title>
   
   <!-- Dashboard UI CSS -->
   <link rel="stylesheet" href="../dashboard ui/dist/assets/vendors/metismenu/metisMenu.min.css">
@@ -215,7 +215,7 @@ try {
         text: 'Are you sure you want to update the system settings? This will affect how the website functions.',
         icon: 'question',
         showCancelButton: true,
-        confirmButtonColor: '#f70',
+        confirmButtonColor: '#28a745',
         cancelButtonColor: '#d33',
         confirmButtonText: 'Yes, update settings!',
         cancelButtonText: 'Cancel',

@@ -179,7 +179,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     // Set validation errors to response
     if (!empty($validation_errors)) {
+        if ($is_ajax) {
+            http_response_code(422);
+        }
+        if (!isset($response)) { $response = ['success' => false, 'message' => '', 'errors' => [], 'data' => []]; }
         $response['errors'] = $validation_errors;
+        // Provide a concise message for the client UI
+        $response['message'] = 'Please correct the highlighted fields and try again.';
     }
     
     if (empty($response['errors'])) {
@@ -202,7 +208,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $subject = htmlspecialchars($subject, ENT_QUOTES, 'UTF-8');
             $message_text = htmlspecialchars($message_text, ENT_QUOTES, 'UTF-8');
             
-            $stmt = $pdo->prepare("INSERT INTO contact_leads (name, first_name, last_name, email, phone, company, subject, message, ip_address, user_agent) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            $stmt = $pdo->prepare("INSERT INTO contact_leads (name, first_name, last_name, email, phone, company, subject, message, terms_accepted, ip_address, user_agent) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             
             $execute_result = $stmt->execute([
                 $nameCombined,
@@ -213,6 +219,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $company,
                 $subject,
                 $message_text,
+                !empty($terms) ? 1 : 0,
                 $ip_address,
                 $user_agent
             ]);

@@ -1,10 +1,10 @@
 {
-  "company_name": "Dimath Sports (Pvt) Ltd",
-  "website": "http://localhost/dimathsports",
-  "email": "info@dimathsports.lk",
-  "phone": "+94 769 175 175",
+  "company_name": "Dimath Group",
+  "website": "https://dimathgroup.lk",
+  "email": "info@dimathgroup.lk",
+  "phone": "+94 91 226 1888",
   "address": {
-    "street": "Dimath Sports (Private) Limited",
+    "street": "Suhada Mawatha, Sadamulla",
     "city": "Batapola",
     "postal_code": "80320",
     "country": "Sri Lanka"
@@ -15,30 +15,31 @@
     "sunday": "10:00 AM - 2:00 PM"
   },
   "social_media": {
-    "facebook": "https://facebook.com/dimathsports",
-    "linkedin": "https://linkedin.com/company/dimathsports",
-    "twitter": "https://twitter.com/dimathsports",
-    "instagram": "https://instagram.com/dimathsports"
+    "facebook": "https://facebook.com/dimathgroup",
+    "linkedin": "https://linkedin.com/company/dimathgroup",
+    "twitter": "https://twitter.com/dimathgroup",
+    "instagram": "https://instagram.com/dimathgroup",
+    "youtube": "https://youtube.com/@dimathgroup"
   },
-  "logo_url": "/images/dimath-logo.avif",
+  "logo_url": "/images/Dimath-Logo_2.avif",
   "email_templates": {
     "admin_notification": {
-      "subject": "New Website Inquiry from {{first_name}} - Dimath Sports",
+      "subject": "New Website Inquiry from {{first_name}} - Dimath Group",
       "congratulations_message": "🎉 Great! A new customer inquiry has been received!",
       "lead_info_title": "📋 Inquiry Details",
       "show_cta_button": false,
       "cta_button_text": "View Inquiry in Dashboard",
       "cta_button_url": "/admin/contact-leads.php",
-      "powered_by_text": "Powered by Dimath Sports"
+      "powered_by_text": "Powered by Dimath Group"
     },
     "auto_reply": {
-      "subject": "{{first_name}}, thank you for contacting Dimath Sports",
+      "subject": "{{first_name}}, thank you for contacting Dimath Group",
       "header_title": "{{greeting}}",
       "header_subtitle": "Your message has been received",
-      "greeting": "Thank you for reaching out to Dimath Sports!",
+      "greeting": "Thank you for reaching out to Dimath Group!",
       "personal_greeting": "Hello {{first_name}},",
-      "main_message": "{{greeting_time}} {{first_name}}! We have successfully received your message and our team will review it carefully. We strive to respond {{response_urgency}} with the information you need about our products and services.",
-      "closing_message": "We appreciate your interest in Dimath Sports and look forward to assisting you.",
+      "main_message": "{{greeting_time}} {{first_name}}! We have successfully received your message and our team will review it carefully. We strive to respond {{response_urgency}} with the information you need about our diversified business services.",
+      "closing_message": "We appreciate your interest in Dimath Group and look forward to assisting you.",
       "submission_details_title": "📋 Your Inquiry Details:",
       "submission_subject_label": "Subject:",
       "submission_date_label": "Submitted:",
@@ -46,8 +47,8 @@
       "response_time": "24 hours",
       "contact_info_title": "📞 Contact Information",
       "business_hours_title": "🕒 Business Hours:",
-      "footer_thank_you": "Thank you for choosing Dimath Sports",
-      "copyright_text": "© {{current_year}} Dimath Sports. All rights reserved."
+      "footer_thank_you": "Thank you for choosing Dimath Group",
+      "copyright_text": "© {{current_year}} Dimath Group. All rights reserved."
     }
   },
   "variables": {

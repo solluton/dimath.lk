@@ -61,9 +61,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <meta charset="utf-8" />
   <meta http-equiv="x-ua-compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Dimath Sports - Admin Login" />
-  <meta name="keyword" content="dimath, cinnamon, login, admin" />
-  <meta name="author" content="Dimath Sports" />
+  <meta name="description" content="Dimath Group - Admin Login" />
+  <meta name="keyword" content="dimath, group, login, admin" />
+  <meta name="author" content="Dimath Group" />
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -75,14 +75,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <link href="<?= asset('images/webclip.png') ?>" rel="apple-touch-icon">
   
   <!-- Title -->
-  <title>Login | Dimath Sports - Admin Dashboard</title>
+  <title>Login | Dimath Group - Admin Dashboard</title>
   
   <!-- Dashboard UI CSS -->
   <link rel="stylesheet" href="<?= asset('dashboard ui/dist/assets/vendors/metismenu/metisMenu.min.css') ?>">
   <link rel="stylesheet" href="<?= asset('dashboard ui/dist/assets/vendors/@flaticon/flaticon-uicons/css/all/all.css') ?>">
   <link rel="stylesheet" type="text/css" href="<?= asset('dashboard ui/dist/assets/css/theme.min.css') ?>">
   
-  <!-- Dimath Cinnamon Custom Dashboard Colors -->
+  <!-- Dimath Group Custom Dashboard Colors -->
   <link rel="stylesheet" type="text/css" href="<?= asset('css/dashboard-custom.css') ?>">
   
   <!-- Color Modes JS - DISABLED to force light mode -->
@@ -110,12 +110,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="card-body p-sm-8 p-4">
           <!-- Logo -->
           <div class="text-center mb-4">
-            <img src="<?= asset('images/dimath-logo.avif') ?>" alt="Dimath Sports" style="max-width: 150px;">
+            <img src="<?= asset('images/dimath-logo.avif') ?>" alt="Dimath Group" style="max-width: 150px;">
           </div>
           
           <h4 class="mb-2 fw-semibold text-center">Login to your account</h4>
           <p class="fs-14 fw-medium text-muted mb-6 text-center">
-            Welcome back to Dimath Sports admin dashboard. Access your account to manage products and operations.
+            Welcome back to Dimath Group admin dashboard. Access your account to manage operations and communications.
           </p>
           
           <!-- Error/Success Messages -->

@@ -282,7 +282,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         text: 'Are you sure you want to update your profile information?',
         icon: 'question',
         showCancelButton: true,
-        confirmButtonColor: '#f70',
+        confirmButtonColor: '#28a745',
         cancelButtonColor: '#d33',
         confirmButtonText: 'Yes, update profile!',
         cancelButtonText: 'Cancel',
@@ -302,7 +302,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           title: 'Profile Updated!',
           text: 'Your profile has been updated successfully.',
           icon: 'success',
-          confirmButtonColor: '#f70',
+          confirmButtonColor: '#28a745',
           confirmButtonText: 'OK'
         });
       }

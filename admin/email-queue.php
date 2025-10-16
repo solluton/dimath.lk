@@ -402,7 +402,7 @@ try {
         text: 'Are you sure you want to retry all failed emails?',
         icon: 'question',
         showCancelButton: true,
-        confirmButtonColor: '#f70',
+        confirmButtonColor: '#28a745',
         cancelButtonColor: '#d33',
         confirmButtonText: 'Yes, retry them!',
         cancelButtonText: 'Cancel'

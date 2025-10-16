@@ -261,7 +261,7 @@ $csrf_token = generateCSRFToken();
           title: 'Missing Information',
           text: 'Please fill in all password fields.',
           icon: 'warning',
-          confirmButtonColor: '#f70',
+          confirmButtonColor: '#28a745',
           confirmButtonText: 'OK'
         });
         return;
@@ -272,7 +272,7 @@ $csrf_token = generateCSRFToken();
           title: 'Password Mismatch',
           text: 'New passwords do not match.',
           icon: 'error',
-          confirmButtonColor: '#f70',
+          confirmButtonColor: '#28a745',
           confirmButtonText: 'OK'
         });
         return;
@@ -303,7 +303,7 @@ $csrf_token = generateCSRFToken();
           title: 'Password Updated!',
           text: 'Your password has been updated successfully.',
           icon: 'success',
-          confirmButtonColor: '#f70',
+          confirmButtonColor: '#28a745',
           confirmButtonText: 'OK'
         });
       }

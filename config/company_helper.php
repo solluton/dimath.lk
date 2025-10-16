@@ -148,4 +148,44 @@ function getYouTubeUrl() {
     $social = getSocialMediaLinks();
     return $social['youtube'] ?? '#';
 }
+
+/**
+ * Get business hours
+ */
+function getBusinessHours() {
+    $details = getCompanyDetails();
+    return $details['business_hours'] ?? [
+        'monday_friday' => '9:00 AM - 5:00 PM',
+        'saturday' => '9:00 AM - 4:00 PM',
+        'sunday' => '10:00 AM - 2:00 PM'
+    ];
+}
+
+/**
+ * Get formatted business hours for display
+ */
+function getFormattedBusinessHours() {
+    $hours = getBusinessHours();
+    return [
+        'Monday - Friday' => $hours['monday_friday'],
+        'Saturday' => $hours['saturday'],
+        'Sunday' => $hours['sunday']
+    ];
+}
+
+/**
+ * Get company logo URL
+ */
+function getCompanyLogoUrl() {
+    $details = getCompanyDetails();
+    return $details['logo_url'] ?? '/images/Dimath-Logo_2.avif';
+}
+
+/**
+ * Get company description or tagline
+ */
+function getCompanyDescription() {
+    $details = getCompanyDetails();
+    return $details['description'] ?? 'A diversified Sri Lankan business group committed to excellence across exports, sports, wellness, pharmaceuticals, agriculture, and fuel services.';
+}
 ?>

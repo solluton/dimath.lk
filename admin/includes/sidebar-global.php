@@ -21,7 +21,7 @@ $path_prefix = $is_admin_page ? '../' : '';
   <!-- Logo -->
   <div class="edash-menu-header ht-80 d-flex align-items-center px-4 py-4 position-relative">
     <a href="<?php echo url('admin/dashboard.php'); ?>" class="edash-logo">
-      <img src="<?php echo asset('images/dimath-logo.avif'); ?>" alt="Dimath Sports" class="img-fluid edash-logo-main" style="max-width: 150px;" />
+      <img src="<?php echo asset('images/dimath-logo.avif'); ?>" alt="Dimath Group" class="img-fluid edash-logo-main" style="max-width: 150px;" />
     </a>
   </div>
   
@@ -36,22 +36,6 @@ $path_prefix = $is_admin_page ? '../' : '';
           <i class="fi fi-rr-dashboard"></i>
           <span class="mm-text">Dashboard</span>
         </a>
-      </li>
-      
-      <li class="nav-label mb-2 mt-4 px-6 fs-11 fw-semibold text-muted text-uppercase" style="letter-spacing: 1px">
-        Content Management
-      </li>
-      <li class="<?= (in_array($current_page, ['products.php', 'product-create.php', 'product-edit.php', 'categories.php', 'category-create.php'])) ? 'mm-active' : '' ?>">
-        <a class="has-arrow" href="javascript:void(0);">
-          <i class="fi fi-rr-shopping-cart"></i>
-          <span class="mm-text">Products</span>
-        </a>
-        <ul>
-          <li><a class="sub-menu <?= ($current_page == 'products.php') ? 'mm-active' : '' ?>" href="<?php echo url('admin/products.php'); ?>">All Products</a></li>
-          <li><a class="sub-menu <?= ($current_page == 'product-create.php') ? 'mm-active' : '' ?>" href="<?php echo url('admin/product-create.php'); ?>">Create Product</a></li>
-          <li><a class="sub-menu <?= ($current_page == 'categories.php') ? 'mm-active' : '' ?>" href="<?php echo url('admin/categories.php'); ?>">Categories</a></li>
-          <li><a class="sub-menu <?= ($current_page == 'category-create.php') ? 'mm-active' : '' ?>" href="<?php echo url('admin/category-create.php'); ?>">Add Category</a></li>
-        </ul>
       </li>
       
       <li class="nav-label mb-2 mt-4 px-6 fs-11 fw-semibold text-muted text-uppercase" style="letter-spacing: 1px">

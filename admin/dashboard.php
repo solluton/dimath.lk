@@ -14,9 +14,6 @@ $error = '';
 try {
     $pdo = getDBConnection();
     
-    // Get products count
-    $stmt = $pdo->query("SELECT COUNT(*) as count FROM products WHERE status = 'active'");
-    $productsCount = $stmt->fetch()['count'];
     
     // Get contact leads count
     $stmt = $pdo->query("SELECT COUNT(*) as count FROM contact_leads WHERE deleted_at IS NULL");
@@ -27,7 +24,7 @@ try {
     $newLeadsCount = $stmt->fetch()['count'];
     
 } catch(PDOException $e) {
-    $productsCount = $leadsCount = $newLeadsCount = 0;
+    $leadsCount = $newLeadsCount = 0;
     $error = 'Error loading statistics.';
 }
 ?>
@@ -38,10 +35,10 @@ try {
   <meta charset="utf-8" />
   <meta http-equiv="x-ua-compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Dimath Sports - Admin Dashboard" />
-  <meta name="keyword" content="dimath, cinnamon, admin, dashboard" />
-  <meta name="author" content="Dimath Sports" />
-  <title>Dashboard | Dimath Sports - Admin Panel</title>
+  <meta name="description" content="Dimath Group - Admin Dashboard" />
+  <meta name="keyword" content="dimath, group, admin, dashboard" />
+  <meta name="author" content="Dimath Group" />
+  <title>Dashboard | Dimath Group - Admin Panel</title>
   
   <!-- Favicon -->
   <link href="<?= asset('images/favicon.png') ?>" rel="shortcut icon" type="image/x-icon">
@@ -52,7 +49,7 @@ try {
   <link rel="stylesheet" href="<?= asset('dashboard ui/dist/assets/vendors/@flaticon/flaticon-uicons/css/all/all.css') ?>">
   <link rel="stylesheet" type="text/css" href="<?= asset('dashboard ui/dist/assets/css/theme.min.css') ?>">
   
-  <!-- Dimath Cinnamon Custom Dashboard Colors -->
+  <!-- Dimath Group Custom Dashboard Colors -->
   <link rel="stylesheet" type="text/css" href="<?= asset('css/dashboard-custom.css') ?>">
   
   <!-- SweetAlert2 -->
@@ -84,7 +81,7 @@ try {
           <div class="col-12">
             <div class="d-flex align-items-center justify-content-between">
               <div>
-                <h2 class="h4 fw-semibold text-dark">Dimath Sports Dashboard</h2>
+                <h2 class="h4 fw-semibold text-dark">Dimath Group Dashboard</h2>
                 <nav aria-label="breadcrumb">
                   <ol class="breadcrumb mb-0">
                     <li class="breadcrumb-item">
@@ -97,7 +94,7 @@ try {
                 </nav>
               </div>
               <div class="d-flex align-items-center gap-2">
-                <span class="text-muted">Welcome back to Dimath Sports, <?php echo htmlspecialchars((isset($user) && is_array($user) && !empty($user['name'])) ? $user['name'] : ((isset($user) && is_array($user) && !empty($user['email'])) ? $user['email'] : 'Admin')); ?>!</span>
+                <span class="text-muted">Welcome back to Dimath Group, <?php echo htmlspecialchars((isset($user) && is_array($user) && !empty($user['name'])) ? $user['name'] : ((isset($user) && is_array($user) && !empty($user['email'])) ? $user['email'] : 'Admin')); ?>!</span>
               </div>
             </div>
           </div>
@@ -121,24 +118,6 @@ try {
         <!-- Content Section -->
         <div class="edash-content-section row g-3 g-md-4 px-4">
           <!-- Statistics Cards -->
-          <div class="col-xxl-3 col-lg-6 col-md-6">
-            <div class="card mb-3 mb-md-4">
-              <div class="card-body">
-                <div class="d-flex align-items-center">
-                  <div class="flex-shrink-0">
-                    <div class="avatar avatar-lg bg-primary text-white rounded">
-                      <i class="fi fi-rr-shopping-cart fs-20"></i>
-                    </div>
-                  </div>
-                  <div class="flex-grow-1 ms-3">
-                    <h6 class="text-muted mb-1">Cinnamon Products</h6>
-                    <h4 class="mb-0"><?php echo $productsCount; ?></h4>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
           <div class="col-xxl-3 col-lg-6 col-md-6">
             <div class="card mb-3 mb-md-4">
               <div class="card-body">
@@ -183,19 +162,14 @@ try {
               </div>
               <div class="card-body">
                 <div class="row g-3">
-                  <div class="col-md-4">
-                    <a href="./product-create.php" class="btn btn-primary w-100">
-                      <i class="fi fi-rr-shopping-cart me-2"></i>Create Product
+                  <div class="col-md-6">
+                    <a href="./contact-leads.php" class="btn btn-primary w-100">
+                      <i class="fi fi-rr-envelope me-2"></i>View Contact Leads
                     </a>
                   </div>
-                  <div class="col-md-4">
-                    <a href="./products.php" class="btn btn-outline-primary w-100">
-                      <i class="fi fi-rr-shopping-cart me-2"></i>View Products
-                    </a>
-                  </div>
-                  <div class="col-md-4">
-                    <a href="./contact-leads.php" class="btn btn-outline-primary w-100">
-                      <i class="fi fi-rr-envelope me-2"></i>View Leads
+                  <div class="col-md-6">
+                    <a href="./settings.php" class="btn btn-outline-primary w-100">
+                      <i class="fi fi-rr-settings me-2"></i>Manage Settings
                     </a>
                   </div>
                 </div>

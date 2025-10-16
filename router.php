@@ -36,6 +36,8 @@ if (preg_match('#^/(.+)\.html$#', $path, $m)) {
         'product' => '/our-products',
         'process' => '/our-process',
         'privacy-policy' => '/privacy-policy',
+        'terms-of-service' => '/terms-of-service',
+        'cookies-policy' => '/cookies-policy',
         '404' => '/404',
         '401' => '/401',
     ];
@@ -90,6 +92,12 @@ if ($path === '/privacy-policy' || $path === '/privacy-policy/') {
 // Terms of Service clean route
 if ($path === '/terms-of-service' || $path === '/terms-of-service/') {
     if (file_exists('terms-of-service.php')) { include 'terms-of-service.php'; } else { include '404.php'; }
+    exit;
+}
+
+// Cookies Policy clean route
+if ($path === '/cookies-policy' || $path === '/cookies-policy/') {
+    if (file_exists('cookies-policy.php')) { include 'cookies-policy.php'; } else { include '404.php'; }
     exit;
 }
 

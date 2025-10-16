@@ -16,8 +16,8 @@ $path_prefix = $is_admin_page ? '../' : '';
           <span class="text-muted">© 2025 Dimath Sports All rights reserved</span>
         </div>
         <div class="d-flex align-items-center gap-3">
-          <a href="<?php echo url('privacy-policy'); ?>" class="text-muted text-decoration-none" style="transition: color 0.3s ease;" onmouseover="this.style.color='#f70'" onmouseout="this.style.color='#6c757d'">Privacy Policy</a>
-          <a href="<?php echo url('terms-of-service'); ?>" class="text-muted text-decoration-none" style="transition: color 0.3s ease;" onmouseover="this.style.color='#f70'" onmouseout="this.style.color='#6c757d'">Terms of Service</a>
-          <a href="https://solluton.com" target="_blank" class="text-muted text-decoration-none" style="transition: color 0.3s ease;" onmouseover="this.style.color='#f70'" onmouseout="this.style.color='#6c757d'">A website by Solluton</a>
+          <a href="<?php echo url('privacy-policy'); ?>" class="text-muted text-decoration-none" style="transition: color 0.3s ease;" onmouseover="this.style.color='#28a745'" onmouseout="this.style.color='#6c757d'">Privacy Policy</a>
+          <a href="<?php echo url('terms-of-service'); ?>" class="text-muted text-decoration-none" style="transition: color 0.3s ease;" onmouseover="this.style.color='#28a745'" onmouseout="this.style.color='#6c757d'">Terms of Service</a>
+          <a href="https://solluton.com" target="_blank" class="text-muted text-decoration-none" style="transition: color 0.3s ease;" onmouseover="this.style.color='#28a745'" onmouseout="this.style.color='#6c757d'">A website by Solluton</a>
         </div>
       </footer>

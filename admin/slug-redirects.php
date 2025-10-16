@@ -267,7 +267,7 @@ try {
             text: `Are you sure you want to delete the ${typeLabel.toLowerCase()} redirect from "/${redirectType}/${oldSlug}" to "/${redirectType}/${newSlug}"?`,
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#f70',
+            confirmButtonColor: '#28a745',
             cancelButtonColor: '#3085d6',
             confirmButtonText: 'Yes, delete redirect!',
             cancelButtonText: 'Cancel'
