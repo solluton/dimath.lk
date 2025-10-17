@@ -265,6 +265,13 @@ margin: 0rem !important;
   background-color: var(--color-scheme-1--text) !important;
   opacity: 1 !important;
 }
+
+@media screen and (max-width: 479px) {
+    .button.is-link.is-icon {
+        justify-content: center;
+        align-items: center;
+    }
+}
 </style>
       </div>
     </div>
